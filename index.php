@@ -515,7 +515,7 @@
                                             <?php } ?>
                                         </div>
 
-                                        <div class="col-3 col-12 pt-2">
+                                        <div class="col-12 col-md-3 pt-2">
                                             <a href="<?= $proyecto['enlace_codigo'] ?>" class="badge bg-success bg-gradient rounded-5 p-0 mt-3 d-flex justify-content-center align-items-center" target="_blank">
 
                                                 <svg class=" bi pe-none p-1 h-100" width="40px" height="40px">

@@ -39,6 +39,14 @@
         object-fit: cover;
         /* or 'contain' if you want stretch instead of crop */
     }
+
+    @media (max-width: 767px) {
+        .carousel-inner {
+            height: 0;
+            padding-bottom: 60%;
+            /* this sets carousel aspect ratio (4:1 here) */
+        }
+    }
 </style>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -168,10 +176,10 @@
 
     <main class="container-fluid ">
         <div class="row">
-            <div class="col-2">
+            <div class="col-1 col-md-2">
             </div>
 
-            <div class="col-8 d-flex justify-content-center pt-5 p-0">
+            <div class="col-10 col-md-8 d-flex justify-content-center pt-5 p-0">
 
                 <div class="row">
 
@@ -280,7 +288,7 @@
                             ?>
                                 <div class="col-auto p-0 pt-2">
 
-                                    <div class="bg-success bg-gradient border border-2 border-success rounded-3 px-3 me-3">
+                                    <div class="bg-success bg-gradient rounded-3 px-3 me-3">
 
                                         <div class="d-flex align-items-center">
 
@@ -310,7 +318,7 @@
                         <div class="row">
                             <?php
 
-                            $proyectos = array(
+                            $trabajos = array(
                                 array(
                                     'icono' => 'cil-laptop',
                                     'empresa' => 'FerreZambrano',
@@ -320,17 +328,17 @@
                                 )
 
                             );
-                            foreach ($proyectos as $key => $value) {
+                            foreach ($trabajos as $key => $value) {
                             ?>
-                                <div class="d-flex">
-                                    <div class="col-1 d-flex align-self-star me-4 mb-4">
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
 
                                         <svg class="bi pe-none mt-1  bg-success bg-gradient  rounded-circle p-3" style="width:75px; height:75px">
                                             <use xlink:href="#<?= $value['icono'] ?>"></use>
                                         </svg>
 
                                     </div>
-                                    <div class="col-7">
+                                    <div class="col-8 col-md-7">
 
                                         <p class="fs-4 mb-0 fw-bold">
                                             <?= $value['empresa'] ?>
@@ -344,7 +352,7 @@
                                             <?= $value['descripcion'] ?>
                                         </p>
                                     </div>
-                                    <div class="col-4 text-end">
+                                    <div class="col-12 col-md-3 text-end">
                                         <span class="badge bg-success bg-gradient rounded-pill">
 
                                             <?= $value['tiempo'] ?>
@@ -358,7 +366,7 @@
                     </div>
 
                     <!-- Proyectos  -->
-                    <div class="mt-3">
+                    <div class=" mt-3">
 
                         <p class="fs-2 fw-bold pt-2">
                             Proyectos
@@ -461,21 +469,23 @@
                             );
                             foreach ($proyectos as $proyecto_key => $proyecto) {
                                 if ($proyecto_key == count($proyectos) - 1) {
-                                    $class_div = 'd-flex px-0';
+                                    $class_div = 'col-12 col-md-5 pt-4 pt-md-2';
+                                    $class_div_principal = 'd-md-flex';
                                 } else {
-                                    $class_div = 'd-flex mb-5 px-0';
+                                    $class_div = 'col-12 col-md-5 mb-4 pt-4 pt-md-2';
+                                    $class_div_principal = 'd-md-flex pb-4';
                                 }
                             ?>
-                                <div class="<?= $class_div; ?>">
+                                <div class="<?= $class_div_principal ?>">
 
-                                    <div class="col-1 d-flex align-self-star me-4 mb-4">
+                                    <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
 
                                         <svg class="bi pe-none mt-1  bg-success bg-gradient  rounded-circle p-3" style="width:75px; height:75px">
                                             <use xlink:href="#<?= $proyecto['icono'] ?>"></use>
                                         </svg>
 
                                     </div>
-                                    <div class="col-6 px-2">
+                                    <div class="col-12 col-md-6">
 
                                         <p class="fs-4 mb-0 fw-bold">
                                             <?= $proyecto['titulo'] ?>
@@ -489,7 +499,7 @@
                                             <?= $proyecto['descripcion'] ?>
                                         </p>
 
-                                        <div class="row">
+                                        <div class="row pe-2 pe-md-4">
                                             <?php foreach ($proyecto['tecnologias'] as $key => $tecnologia) { ?>
                                                 <div class="col-auto pt-2 pe-0">
                                                     <span class="badge bg-dark bg-gradient border-white border rounded-3 p-0 px-2 d-flex  align-items-center">
@@ -505,7 +515,7 @@
                                             <?php } ?>
                                         </div>
 
-                                        <div class="col-3 pt-2">
+                                        <div class="col-3 col-12 pt-2">
                                             <a href="<?= $proyecto['enlace_codigo'] ?>" class="badge bg-success bg-gradient rounded-5 p-0 mt-3 d-flex justify-content-center align-items-center" target="_blank">
 
                                                 <svg class=" bi pe-none p-1 h-100" width="40px" height="40px">
@@ -515,7 +525,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-5 mb-4">
+                                    <div class="<?= $class_div; ?>">
                                         <div id="carusel<?= $proyecto_key ?>" class="carousel slide carousel-fade">
                                             <div class="carousel-inner">
                                                 <?php foreach ($proyecto['imagenes_carusel'] as $key => $imagen) {
@@ -601,14 +611,14 @@
                             ?>
                                 <div class="d-flex pb-2">
 
-                                    <div class="col-1 d-flex align-self-star me-4 mb-4">
+                                    <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
 
                                         <svg class="bi pe-none mt-1  bg-success bg-gradient  rounded-circle p-3" style="width:75px; height:75px">
                                             <use xlink:href="#<?= $formacion['icono'] ?>"></use>
                                         </svg>
 
                                     </div>
-                                    <div class="col-7">
+                                    <div class="col-9 col-md-8 col-md-7">
 
                                         <p class="fs-4 mb-0 fw-bold">
                                             <?= $formacion['institucion'] ?>
@@ -622,7 +632,7 @@
                                             <?= $formacion['descripcion'] ?>
                                         </p>
                                     </div>
-                                    <div class="col-4 text-end">
+                                    <div class="col-3 col-md-4 text-end">
 
                                         <span class="badge bg-dark bg-gradient rounded-pill">
 
@@ -673,7 +683,7 @@
                                 )
                             );
                             foreach ($en_procesos as $key => $proceso) { ?>
-                                <div class="col-4 ">
+                                <div class="col-6 col-md-4">
                                     <div class="card bg-black bg-gradient border-white text-white h-100">
                                         <img src="<?= $proceso['imagen'] ?>" class="card-img-top" alt="<?= $proceso['titulo'] ?>" loading="lazy">
                                         <div class="card-body">
@@ -697,16 +707,17 @@
                     <div class="my-3">
                         <hr>
 
-                        <div class="row">
-                            <div class="col-10 d-flex align-self-center">
+                        <div class="row flex-wrap justify-content-between align-items-center d-flex">
+                            <div class="col-6 d-flex align-self-center">
                                 <small>
                                     Agradecimientos a mouredev por proporcionar la plantilla.
                                 </small>
                             </div>
-                            <div class="col-2 d-flex align-self-center">
+                            <div class="col-2 d-flex justify-content-end">
 
 
-                                <a class="btn" href="./jorge-heredia-curriculum-spanish.docx">
+
+                                <a class="btn p-0" href="./jorge-heredia-curriculum-spanish.docx">
 
                                     <svg class="bi pe-none" width="20" height="20">
                                         <use xlink:href="#curriculum"></use>
@@ -715,7 +726,7 @@
                                 </a>
 
 
-                                <a class="btn" href="https://github.com/JLHJ21" target="_blank">
+                                <a class="btn p-0" href="https://github.com/JLHJ21" target="_blank">
 
 
                                     <svg class="bi pe-none" width="20" height="20">
@@ -725,7 +736,7 @@
                                 </a>
 
 
-                                <a class="btn" href="https://www.linkedin.com/in/jorge-luis-heredia-jaimes-053a3131b/" target="_blank">
+                                <a class="btn p-0" href="https://www.linkedin.com/in/jorge-luis-heredia-jaimes-053a3131b/" target="_blank">
 
                                     <svg class="bi pe-none" width="20" height="20">
                                         <use xlink:href="#linkedin"></use>

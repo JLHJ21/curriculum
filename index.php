@@ -177,7 +177,7 @@
 
                     <!-- Presentacion principal -->
                     <div class="col-12 col-md-3">
-                        <img src="./imagenes/imagen.jpg" class="img-fluid rounded-circle" alt="">
+                        <img src="./imagenes/imagen.jpg" class="img-fluid rounded-circle" alt="Foto de perfil" loading="lazy">
                     </div>
                     <div class="col-12 col-md-9 pt-2 pt-md-0 text-center text-md-start">
 
@@ -527,7 +527,7 @@
                                                     }
                                                 ?>
                                                     <div class="<?= $class; ?>">
-                                                        <img src="<?= $imagen ?>" class="d-block w-100 rounded rounded-5" alt="<?= $proyecto['titulo'] ?>">
+                                                        <img src="<?= $imagen ?>" class="d-block w-100 rounded rounded-5" alt="<?= $proyecto['titulo'] ?>" loading="lazy">
                                                         <div class="carousel-caption d-none d-md-block">
                                                         </div>
                                                     </div>
@@ -675,7 +675,7 @@
                             foreach ($en_procesos as $key => $proceso) { ?>
                                 <div class="col-4 ">
                                     <div class="card bg-black bg-gradient border-white text-white h-100">
-                                        <img src="<?= $proceso['imagen'] ?>" class="card-img-top" alt="...">
+                                        <img src="<?= $proceso['imagen'] ?>" class="card-img-top" alt="<?= $proceso['titulo'] ?>" loading="lazy">
                                         <div class="card-body">
                                             <h5 class="card-title"><?= $proceso['titulo'] ?></h5>
                                             <p class="card-text"><?= $proceso['descripcion'] ?></p>

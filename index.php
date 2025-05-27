@@ -838,7 +838,7 @@
                                 ),
 
                                 array(
-                                    'imagen' => './imagenes/pagina-ferreteria-next/1.png',
+                                    'imagen' => './imagenes/pagina-ferreteria-next/1.PNG',
                                     'titulo' => 'Pagina de ferretería',
                                     'descripcion' => 'Plataforma para gestionar un negocio, con prestamos, facturas y seguimiento de ventas.',
                                     'estado' => 'En proceso'

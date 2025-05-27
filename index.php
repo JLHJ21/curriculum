@@ -55,6 +55,17 @@
             d='M0 0h32v32h-32zM29.38 24.37c-0.234-1.464-1.188-2.688-4.005-3.833-0.979-0.458-2.073-0.781-2.396-1.521-0.12-0.438-0.141-0.677-0.063-0.938 0.203-0.865 1.219-1.12 2.021-0.88 0.521 0.161 1 0.557 1.302 1.198 1.38-0.901 1.38-0.901 2.339-1.5-0.359-0.557-0.536-0.802-0.781-1.036-0.839-0.943-1.958-1.422-3.776-1.38l-0.943 0.12c-0.901 0.219-1.76 0.698-2.281 1.339-1.516 1.719-1.078 4.719 0.76 5.964 1.818 1.359 4.479 1.656 4.823 2.938 0.318 1.563-1.161 2.063-2.625 1.88-1.078-0.24-1.677-0.781-2.339-1.781l-2.438 1.401c0.276 0.641 0.599 0.917 1.078 1.479 2.318 2.339 8.12 2.219 9.161-1.339 0.036-0.12 0.318-0.943 0.099-2.198zM17.401 14.708h-2.995c0 2.583-0.016 5.151-0.016 7.74 0 1.641 0.083 3.151-0.182 3.615-0.443 0.917-1.573 0.802-2.089 0.641-0.526-0.26-0.797-0.62-1.104-1.141-0.089-0.141-0.151-0.26-0.172-0.26l-2.432 1.5c0.406 0.839 1 1.563 1.766 2.021 1.141 0.682 2.672 0.901 4.276 0.542 1.042-0.302 1.943-0.922 2.411-1.88 0.682-1.24 0.536-2.76 0.531-4.464 0.016-2.74 0-5.479 0-8.24z' />
     </symbol>
 
+    <symbol id="fa-tailwind" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12 6.036c-2.667 0-4.333 1.325-5 3.976 1-1.325 2.167-1.822 3.5-1.491.761.189 1.305.738 1.906 1.345C13.387 10.855 14.522 12 17 12c2.667 0 4.333-1.325 5-3.976-1 1.325-2.166 1.822-3.5 1.491-.761-.189-1.305-.738-1.907-1.345-.98-.99-2.114-2.134-4.593-2.134zM7 12c-2.667 0-4.333 1.325-5 3.976 1-1.326 2.167-1.822 3.5-1.491.761.189 1.305.738 1.907 1.345.98.989 2.115 2.134 4.594 2.134 2.667 0 4.333-1.325 5-3.976-1 1.325-2.167 1.822-3.5 1.491-.761-.189-1.305-.738-1.906-1.345C10.613 13.145 9.478 12 7 12z" />
+    </symbol>
+
+    <symbol id="fa-next-js" viewBox="0 0 128 128">
+        <path
+            d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6h-6.8V41.8h6.8l50.5 75.8C116.4 106.2 128 86.5 128 64c0-35.3-28.7-64-64-64zm22.1 84.6l-7.5-11.3V41.8h7.5v42.8z" />
+    </symbol>
+
+
     <symbol id="fa-laravel" viewBox="0 0 512 512">
         <path
             d="M504.4 115.8a5.7 5.7 0 0 0 -.3-.7 8.5 8.5 0 0 0 -.5-1.3 6 6 0 0 0 -.5-.7 9.4 9.4 0 0 0 -.7-.9c-.2-.2-.5-.4-.8-.6a8.8 8.8 0 0 0 -.9-.7L404.4 55.6a8 8 0 0 0 -8 0L300.1 111h0a8.1 8.1 0 0 0 -.9 .7 7.7 7.7 0 0 0 -.8 .6 8.2 8.2 0 0 0 -.7 .9c-.2 .2-.4 .5-.5 .7a9.7 9.7 0 0 0 -.5 1.3c-.1 .2-.2 .4-.3 .7a8.1 8.1 0 0 0 -.3 2.1V223.2l-80.2 46.2V63.4a7.8 7.8 0 0 0 -.3-2.1c-.1-.2-.2-.5-.3-.7a8.4 8.4 0 0 0 -.5-1.2c-.1-.3-.4-.5-.5-.7a9.4 9.4 0 0 0 -.7-.9 9.5 9.5 0 0 0 -.8-.6 9.8 9.8 0 0 0 -.9-.7h0L115.6 1.1a8 8 0 0 0 -8 0L11.3 56.5h0a6.5 6.5 0 0 0 -.9 .7 7.8 7.8 0 0 0 -.8 .6 8.2 8.2 0 0 0 -.7 .9c-.2 .3-.4 .5-.6 .7a7.9 7.9 0 0 0 -.5 1.2 6.5 6.5 0 0 0 -.3 .7 8.2 8.2 0 0 0 -.3 2.1v329.7a8 8 0 0 0 4 7l192.5 110.8a8.8 8.8 0 0 0 1.3 .5c.2 .1 .4 .2 .6 .3a7.9 7.9 0 0 0 4.1 0c.2-.1 .4-.2 .6-.2a8.6 8.6 0 0 0 1.4-.6L404.4 400.1a8 8 0 0 0 4-7V287.9l92.2-53.1a8 8 0 0 0 4-7V117.9A8.6 8.6 0 0 0 504.4 115.8zM111.6 17.3h0l80.2 46.2-80.2 46.2L31.4 63.4zm88.3 60V278.6l-46.5 26.8-33.7 19.4V123.5l46.5-26.8zm0 412.8L23.4 388.5V77.3L57.1 96.7l46.5 26.8V338.7a6.9 6.9 0 0 0 .1 .9 8 8 0 0 0 .2 1.2h0a5.9 5.9 0 0 0 .4 .9 6.4 6.4 0 0 0 .4 1v0a8.5 8.5 0 0 0 .6 .8 7.6 7.6 0 0 0 .7 .8l0 0c.2 .2 .5 .4 .8 .6a8.9 8.9 0 0 0 .9 .7l0 0 0 0 92.2 52.2zm8-106.2-80.1-45.3 84.1-48.4 92.3-53.1 80.1 46.1-58.8 33.6zm184.5 4.6L215.9 490.1V397.8L346.6 323.2l45.8-26.2zm0-119.1L358.7 250l-46.5-26.8V131.8l33.7 19.4L392.4 178zm8-105.3-80.2-46.2 80.2-46.2 80.2 46.2zm8 105.3V178L455 151.2l33.7-19.4v91.4h0z" />
@@ -272,7 +283,7 @@
 
 
                             <a class="me-2 btn border border-2 border-success rounded rounded-3"
-                                href="./jorge-heredia-curriculum-spanish.docx">
+                                href="./sintesis-curricular-jorge-heredia.docx">
 
                                 <svg class="bi pe-none" width="20" height="20">
                                     <use xlink:href="#curriculum"></use>
@@ -333,17 +344,22 @@
                             <?php
 
                             $tecnologias = array(
-                                array('fa-laravel', 'Laravel (RestAPI)'),
                                 array('fa-react', 'React.js'),
+                                array('fa-next-js', 'Next js'),
+                                array('fa-laravel', 'Laravel (RestAPI)'),
 
-                                array('cib-php', 'PHP'),
-                                array('cib-mysql', 'MySQL'),
-                                array('cib-javascript', 'JavaScript'),
+                                array('fa-tailwind', 'Tailwind'),
                                 array('cib-bootstrap', 'Bootstrap'),
-                                array('cib-python', 'Python'),
-                                array('cib-django', 'Django'),
+                                array('cil-chart', 'ChartJS'),
+
                                 array('cib-jquery', 'Jquery'),
-                                array('cil-chart', 'ChartJS')
+                                array('cib-php', 'PHP'),
+                                array('cib-javascript', 'JavaScript'),
+
+                                array('cib-mysql', 'MySQL'),
+
+                                array('cib-django', 'Django'),
+                                array('cib-python', 'Python'),
 
                             );
 
@@ -456,7 +472,28 @@
 
                             $proyectos = array(
 
+                                array(
+                                    'icono' => 'shop',
+                                    'titulo' => 'Plataforma de mangas/manhwas/comics',
+                                    'propiedad' => 'Autoría propia',
+                                    'descripcion' => 'Proyecto con CRUD sobre autores, editoriales, generos, títulos y capítulos, controlador de vistas, buscador, paginación y demás.',
+                                    'tecnologias' => array(
+                                        array('icono' => 'fa-laravel', 'nombre' => 'Laravel'),
+                                        array('icono' => 'cib-postgresql', 'nombre' => 'Postgresql'),
+                                        array('icono' => 'cib-bootstrap', 'nombre' => 'Bootstrap'),
+                                        array('icono' => 'fa-react', 'nombre' => 'React'),
 
+                                    ),
+                                    'imagenes_carusel' => array(
+                                        './imagenes/pagina-mangas/4.png',
+                                        './imagenes/pagina-mangas/2.png',
+                                        './imagenes/pagina-mangas/3.png',
+                                        './imagenes/pagina-mangas/5.png',
+                                        './imagenes/pagina-mangas/6.png',
+                                    ),
+                                    'enlace_codigo' => false,
+                                    'tiempo' => 'Octubre 2024 - Octubre 2024',
+                                ),
                                 array(
                                     'icono' => 'shop',
                                     'titulo' => 'Mini-proyecto de registro de blog de notas',
@@ -619,14 +656,19 @@
                                         </div>
 
                                         <div class="col-12 col-md-3 pt-2">
-                                            <a href="<?= $proyecto['enlace_codigo'] ?>"
-                                                class="badge bg-success bg-gradient rounded-5 p-0 mt-3 d-flex justify-content-center align-items-center"
-                                                target="_blank">
 
-                                                <svg class=" bi pe-none p-1 h-100" width="40px" height="40px">
-                                                    <use xlink:href="#github"></use>
-                                                </svg>
-                                            </a>
+                                            <?php
+                                            if ($proyecto['enlace_codigo'] !== false) { ?>
+                                                <a href="<?= $proyecto['enlace_codigo'] ?>"
+                                                    class="badge bg-success bg-gradient rounded-5 p-0 mt-3 d-flex justify-content-center align-items-center"
+                                                    target="_blank">
+
+                                                    <svg class=" bi pe-none p-1 h-100" width="40px" height="40px">
+                                                        <use xlink:href="#github"></use>
+                                                    </svg>
+                                                </a>
+                                            <?php } ?>
+
                                         </div>
 
                                     </div>
@@ -792,7 +834,14 @@
                                     'imagen' => './imagenes/pagina-mangas/1.png',
                                     'titulo' => 'Pagina de mangas',
                                     'descripcion' => 'Plataforma para ver comics/mangas.',
-                                    'estado' => 'Hiatus'
+                                    'estado' => 'Terminado'
+                                ),
+
+                                array(
+                                    'imagen' => './imagenes/pagina-ferreteria-next/1.png',
+                                    'titulo' => 'Pagina de ferretería',
+                                    'descripcion' => 'Plataforma para gestionar un negocio, con prestamos, facturas y seguimiento de ventas.',
+                                    'estado' => 'En proceso'
                                 )
                             );
                             foreach ($en_procesos as $key => $proceso) { ?>

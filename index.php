@@ -364,7 +364,7 @@
                             );
 
                             foreach ($tecnologias as $key => $value) {
-                                ?>
+                            ?>
                                 <div class="col-auto p-0 pt-2">
 
                                     <div class="bg-success bg-gradient rounded-3 px-3 me-3">
@@ -403,7 +403,7 @@
                                     'empresa' => 'IADUK - Freelancer',
                                     'cargo' => 'Programador',
                                     'descripcion' => 'Creación de e-commerce y sistema de gestión de base de datos con Next.js junto con su conexión de base datos y el uso de Vercel, Stripe y otras herramientas de terceros.',
-                                    'tiempo' => 'Febrero 2025 - Abril 2025'
+                                    'tiempo' => 'Febrero 2025 - Actualmente'
                                 ),
                                 array(
                                     'icono' => 'laptop-medical',
@@ -422,7 +422,7 @@
 
                             );
                             foreach ($trabajos as $key => $value) {
-                                ?>
+                            ?>
                                 <div class="d-flex flex-wrap">
                                     <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
 
@@ -485,11 +485,11 @@
 
                                     ),
                                     'imagenes_carusel' => array(
-                                        './imagenes/pagina-mangas/4.png',
-                                        './imagenes/pagina-mangas/2.png',
-                                        './imagenes/pagina-mangas/3.png',
-                                        './imagenes/pagina-mangas/5.png',
-                                        './imagenes/pagina-mangas/6.png',
+                                        './imagenes/pagina-mangas/4.PNG',
+                                        './imagenes/pagina-mangas/2.PNG',
+                                        './imagenes/pagina-mangas/3.PNG',
+                                        './imagenes/pagina-mangas/5.PNG',
+                                        './imagenes/pagina-mangas/6.PNG',
                                     ),
                                     'enlace_codigo' => false,
                                     'tiempo' => 'Octubre 2024 - Octubre 2024',
@@ -613,7 +613,7 @@
                                     $class_div = 'col-12 col-md-5 mb-4 pt-4 pt-md-2';
                                     $class_div_principal = 'd-md-flex pb-4';
                                 }
-                                ?>
+                            ?>
                                 <div class="<?= $class_div_principal ?>">
 
                                     <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
@@ -682,7 +682,7 @@
                                                     } else {
                                                         $class = 'carousel-item';
                                                     }
-                                                    ?>
+                                                ?>
                                                     <div class="<?= $class; ?>">
                                                         <img src="<?= $imagen ?>" class="d-block w-100 rounded rounded-5"
                                                             alt="<?= $proyecto['titulo'] ?>" loading="lazy">
@@ -760,7 +760,7 @@
 
                             );
                             foreach ($formaciones as $key => $formacion) {
-                                ?>
+                            ?>
                                 <div class="d-flex pb-2">
 
                                     <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
@@ -829,14 +829,6 @@
                                     'descripcion' => 'Sistema para la gestión de una biblioteca o libreria, con su sistema de prestamos.',
                                     'estado' => 'En proceso'
                                 ),
-
-                                array(
-                                    'imagen' => './imagenes/pagina-mangas/1.png',
-                                    'titulo' => 'Pagina de mangas',
-                                    'descripcion' => 'Plataforma para ver comics/mangas.',
-                                    'estado' => 'Terminado'
-                                ),
-
                                 array(
                                     'imagen' => './imagenes/pagina-ferreteria-next/1.PNG',
                                     'titulo' => 'Pagina de ferretería',

@@ -426,7 +426,7 @@
                                     'icono' => 'briefcase',
                                     'empresa' => '735 - Freelancer',
                                     'cargo' => 'Programador Front-End',
-                                    'descripcion' => 'Implementación de APIS a sistemas React y QA parcial.',
+                                    'descripcion' => 'Implementación de APIs a sistemas React y QA parcial.',
                                     'tiempo' => 'Febrero 2026 - Actualmente'
                                 ),
                                 array(

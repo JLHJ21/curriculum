@@ -19,9 +19,10 @@
     /* https://stackoverflow.com/a/73562170/20676567 */
 
     .carousel-inner {
-        height: 0;
-        padding-bottom: 95%;
-        /* this sets carousel aspect ratio (4:1 here) */
+        /* height: 0; */
+        /* padding-bottom: 95%; */
+        aspect-ratio: 1 / 1;
+        width: 100%;
     }
 
     .carousel-item {
@@ -34,17 +35,21 @@
     }
 
     .carousel-item img {
+        width: 100%;
         height: 100%;
-        /* Bootstrap handles width already */
         object-fit: cover;
-        /* or 'contain' if you want stretch instead of crop */
     }
 
     @media (max-width: 767px) {
         .carousel-inner {
-            height: 0;
-            padding-bottom: 60%;
+            aspect-ratio: 16 / 9;
+            /* height: 0; */
+            /* padding-bottom: 60%; */
             /* this sets carousel aspect ratio (4:1 here) */
+        }
+
+        .display-scroll {
+            max-height: 30vh;
         }
     }
 </style>
@@ -53,6 +58,9 @@
     <symbol id="cib-javascript" viewBox="0 0 32 32">
         <path
             d='M0 0h32v32h-32zM29.38 24.37c-0.234-1.464-1.188-2.688-4.005-3.833-0.979-0.458-2.073-0.781-2.396-1.521-0.12-0.438-0.141-0.677-0.063-0.938 0.203-0.865 1.219-1.12 2.021-0.88 0.521 0.161 1 0.557 1.302 1.198 1.38-0.901 1.38-0.901 2.339-1.5-0.359-0.557-0.536-0.802-0.781-1.036-0.839-0.943-1.958-1.422-3.776-1.38l-0.943 0.12c-0.901 0.219-1.76 0.698-2.281 1.339-1.516 1.719-1.078 4.719 0.76 5.964 1.818 1.359 4.479 1.656 4.823 2.938 0.318 1.563-1.161 2.063-2.625 1.88-1.078-0.24-1.677-0.781-2.339-1.781l-2.438 1.401c0.276 0.641 0.599 0.917 1.078 1.479 2.318 2.339 8.12 2.219 9.161-1.339 0.036-0.12 0.318-0.943 0.099-2.198zM17.401 14.708h-2.995c0 2.583-0.016 5.151-0.016 7.74 0 1.641 0.083 3.151-0.182 3.615-0.443 0.917-1.573 0.802-2.089 0.641-0.526-0.26-0.797-0.62-1.104-1.141-0.089-0.141-0.151-0.26-0.172-0.26l-2.432 1.5c0.406 0.839 1 1.563 1.766 2.021 1.141 0.682 2.672 0.901 4.276 0.542 1.042-0.302 1.943-0.922 2.411-1.88 0.682-1.24 0.536-2.76 0.531-4.464 0.016-2.74 0-5.479 0-8.24z' />
+    </symbol>
+    <symbol id="fa-nextjs" viewBox="0 0 128 128">
+        <path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6h-6.8V41.8h6.8l50.5 75.8C116.4 106.2 128 86.5 128 64c0-35.3-28.7-64-64-64zm22.1 84.6l-7.5-11.3V41.8h7.5v42.8z" />
     </symbol>
 
     <symbol id="fa-tailwind" viewBox="0 0 24 24">
@@ -235,18 +243,40 @@
         <path
             d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zm395.3 11.3l-112 112c-4.6 4.6-11.5 5.9-17.4 3.5s-9.9-8.3-9.9-14.8l0-64-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-64c0-6.5 3.9-12.3 9.9-14.8s12.9-1.1 17.4 3.5l112 112c6.2 6.2 6.2 16.4 0 22.6z" />
     </symbol>
+
+    <symbol id="briefcase" viewBox="0 0 640 640">
+        <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+        <path d="M264 112L376 112C380.4 112 384 115.6 384 120L384 160L256 160L256 120C256 115.6 259.6 112 264 112zM208 120L208 160L128 160C92.7 160 64 188.7 64 224L64 320L576 320L576 224C576 188.7 547.3 160 512 160L432 160L432 120C432 89.1 406.9 64 376 64L264 64C233.1 64 208 89.1 208 120zM576 368L384 368L384 384C384 401.7 369.7 416 352 416L288 416C270.3 416 256 401.7 256 384L256 368L64 368L64 480C64 515.3 92.7 544 128 544L512 544C547.3 544 576 515.3 576 480L576 368z" />
+    </symbol>
+
+    <symbol id="screen" viewBox="0 0 640 640">
+        <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+        <path d="M128 96C92.7 96 64 124.7 64 160L64 416C64 451.3 92.7 480 128 480L272 480L256 528L184 528C170.7 528 160 538.7 160 552C160 565.3 170.7 576 184 576L456 576C469.3 576 480 565.3 480 552C480 538.7 469.3 528 456 528L384 528L368 480L512 480C547.3 480 576 451.3 576 416L576 160C576 124.7 547.3 96 512 96L128 96zM160 160L480 160C497.7 160 512 174.3 512 192L512 352C512 369.7 497.7 384 480 384L160 384C142.3 384 128 369.7 128 352L128 192C128 174.3 142.3 160 160 160z" />
+    </symbol>
+
+    <symbol id="stripe" viewBox="0 0 32 32">
+
+        <!-- License: MIT. Made by Icons8: https://github.com/icons8/line-awesome -->
+        <path d="M 5 6 C 3.355469 6 2 7.355469 2 9 L 2 23 C 2 24.644531 3.355469 26 5 26 L 27 26 C 28.644531 26 30 24.644531 30 23 L 30 9 C 30 7.355469 28.644531 6 27 6 Z M 5 8 L 27 8 C 27.566406 8 28 8.433594 28 9 L 28 23 C 28 23.566406 27.566406 24 27 24 L 5 24 C 4.433594 24 4 23.566406 4 23 L 4 9 C 4 8.433594 4.433594 8 5 8 Z M 16.5 11.4375 C 16.027344 11.4375 15.65625 11.808594 15.65625 12.28125 C 15.65625 12.75 16.027344 13.125 16.5 13.125 C 16.96875 13.125 17.34375 12.75 17.34375 12.28125 C 17.34375 11.808594 16.96875 11.4375 16.5 11.4375 Z M 11.0625 12.1875 L 9.6875 12.40625 L 9.5 13.625 L 9 13.71875 L 8.8125 14.84375 L 9.5 14.84375 L 9.5 17.1875 C 9.5 17.796875 9.652344 18.210938 9.96875 18.46875 C 10.234375 18.683594 10.617188 18.78125 11.15625 18.78125 C 11.570313 18.78125 11.824219 18.703125 12 18.65625 L 12 17.40625 C 11.902344 17.433594 11.679688 17.46875 11.53125 17.46875 C 11.214844 17.46875 11.0625 17.308594 11.0625 16.9375 L 11.0625 14.84375 L 11.90625 14.84375 L 12.09375 13.625 L 11.0625 13.625 Z M 6.90625 13.53125 C 6.359375 13.53125 5.886719 13.671875 5.5625 13.9375 C 5.222656 14.214844 5.0625 14.636719 5.0625 15.125 C 5.0625 16.007813 5.589844 16.371094 6.46875 16.6875 C 7.035156 16.886719 7.21875 17.027344 7.21875 17.25 C 7.21875 17.464844 7.050781 17.59375 6.71875 17.59375 C 6.308594 17.59375 5.628906 17.386719 5.1875 17.125 L 5 18.34375 C 5.378906 18.558594 6.085938 18.78125 6.8125 18.78125 C 7.390625 18.78125 7.863281 18.667969 8.1875 18.40625 C 8.550781 18.121094 8.75 17.671875 8.75 17.125 C 8.75 16.222656 8.203125 15.847656 7.3125 15.53125 C 6.839844 15.355469 6.5625 15.246094 6.5625 15.03125 C 6.5625 14.847656 6.703125 14.71875 6.96875 14.71875 C 7.457031 14.71875 7.96875 14.925781 8.3125 15.09375 L 8.5 13.875 C 8.226563 13.746094 7.679688 13.53125 6.90625 13.53125 Z M 20.71875 13.53125 C 20.25 13.53125 19.820313 13.746094 19.4375 14.15625 L 19.375 13.625 L 17.9375 13.625 L 17.9375 20.5625 L 19.5625 20.28125 L 19.5625 18.6875 C 19.808594 18.765625 20.054688 18.78125 20.28125 18.78125 C 20.683594 18.78125 21.265625 18.679688 21.71875 18.1875 C 22.152344 17.714844 22.375 17 22.375 16.03125 C 22.375 15.175781 22.230469 14.507813 21.90625 14.09375 C 21.621094 13.722656 21.226563 13.53125 20.71875 13.53125 Z M 24.9375 13.53125 C 23.566406 13.53125 22.71875 14.5625 22.71875 16.1875 C 22.71875 17.097656 22.925781 17.785156 23.375 18.21875 C 23.777344 18.609375 24.378906 18.78125 25.125 18.78125 C 25.8125 18.78125 26.441406 18.640625 26.84375 18.375 L 26.65625 17.25 C 26.261719 17.464844 25.800781 17.59375 25.28125 17.59375 C 24.96875 17.59375 24.75 17.511719 24.59375 17.375 C 24.425781 17.230469 24.34375 17.019531 24.3125 16.6875 L 26.96875 16.6875 C 26.976563 16.609375 27 16.242188 27 16.125 C 27 15.320313 26.8125 14.667969 26.46875 14.21875 C 26.117188 13.765625 25.605469 13.53125 24.9375 13.53125 Z M 15 13.5625 C 14.546875 13.5625 14.175781 13.820313 14.03125 14.25 L 13.9375 13.625 L 12.53125 13.625 L 12.53125 18.6875 L 14.15625 18.6875 L 14.15625 15.40625 C 14.355469 15.160156 14.640625 15.0625 15.03125 15.0625 C 15.117188 15.0625 15.203125 15.074219 15.3125 15.09375 L 15.3125 13.59375 C 15.199219 13.566406 15.097656 13.5625 15 13.5625 Z M 15.6875 13.625 L 15.6875 18.6875 L 17.3125 18.6875 L 17.3125 13.625 Z M 24.90625 14.625 C 25.269531 14.625 25.472656 14.972656 25.5 15.6875 L 24.3125 15.6875 C 24.359375 14.964844 24.535156 14.625 24.90625 14.625 Z M 20.15625 14.78125 C 20.566406 14.78125 20.78125 15.199219 20.78125 16.0625 C 20.78125 16.554688 20.710938 16.957031 20.5625 17.21875 C 20.433594 17.464844 20.234375 17.59375 20 17.59375 C 19.839844 17.59375 19.691406 17.566406 19.5625 17.5 L 19.5625 15.09375 C 19.835938 14.808594 20.066406 14.78125 20.15625 14.78125 Z" />
+
+    </symbol>
+    <symbol id="sql-server" viewBox="0 0 128 128">
+        <path d="M55.25 4.15c-.33.11-2.1.68-3.96 1.29-10 3.27-17.08 7.06-18.84 10.06-.67 1.15-.8 2.08-.4 3.01.44 1.05 1.25 1.84 3.47 3.41 1.04.73 2.81 2.26 3.96 3.41 5.5 5.49 8.17 12.22 7.87 19.83-.34 8.56-4.35 17.12-12.03 25.69-2.68 2.99-5.43 5.48-10.71 9.71-4.4 3.52-6.79 5.8-8.42 8.01-4.99 6.8-3.66 12.86 3.96 17.92 6.72 4.47 18.56 8.19 32.51 10.21 4.68.68 9.97 1.11 11.24.92l.89-.13 1.4-2.52c7.08-12.75 10.66-24.77 11.09-37.21.19-5.55-.51-12.12-1.7-15.96-.22-.69-.38-1.28-.35-1.3.02-.02 2-.61 4.4-1.33 12.61-3.76 24.81-6.72 34.89-8.47 1.96-.34 3.64-.69 3.73-.78.54-.53-1.03-2.98-3.58-5.61-9.43-9.73-26.09-17.14-45.64-20.29-3.77-.61-4.23-.83-5.63-2.68-2.22-2.94-4.31-7.97-7.16-17.17-.09-.28-.18-.28-.99-.02zm1.3 3.46c1.1 2.99 1.77 5.34 1.77 6.17v.65l-.93-.11c-5.04-.58-13.08-1.83-14.79-2.29-.44-.12-.69-.29-.61-.42.13-.21 1.84-1.03 6.92-3.34 4.74-2.15 6.54-2.95 6.68-2.96.06 0 .49 1.03.96 2.3zm-10.66 6.31c6.15 1.29 10.63 2.1 11.62 2.1.96 0 .85.08-3.67 2.84-3.49 2.12-3.89 2.32-4.77 2.32h-.96l-2.58-2.62c-3.13-3.17-5.25-5.49-5.25-5.75 0-.11.06-.14.15-.09.08.04 2.55.59 5.46 1.2zm-4.54 2.91c1.51 1.76 2.68 3.24 2.62 3.31-.13.13-4.44-.94-7.08-1.75-2.3-.71-2.58-.95-1.97-1.73.4-.52 3.37-3 3.59-3.01.06-.01 1.33 1.41 2.84 3.18zm19.62 3.65c.6 1.43 1.06 2.59 1.04 2.61-.03.02-8.11-1.23-8.82-1.37-.15-.03 1.22-.96 3.06-2.08s3.41-1.97 3.49-1.88c.08.07.63 1.29 1.23 2.72zm-17.62 2.71c.16.16 2.09 6.36 2 6.44-.03.03-.95-1.03-2.04-2.38-1.1-1.35-2.75-3.24-3.7-4.23l-1.71-1.79 2.67.92c1.46.51 2.72.98 2.78 1.04zm7.72.83c3.35.48 6.13.91 6.18.96.04.05-1.98 1.62-4.5 3.5-2.52 1.87-4.6 3.38-4.63 3.35-.03-.03-.28-.81-.56-1.74-.28-.93-1-2.86-1.59-4.31-.59-1.45-1.05-2.63-1.03-2.63.02 0 2.78.4 6.13.87zm8.42 2.68c.74 1.73 1.03 3.39 1.15 6.7.06 1.78.07 3.23.01 3.23-.06 0-1.12-.37-2.35-.81-2.46-.89-7.28-2.48-7.85-2.59-.25-.05.91-1.16 3.96-3.79 2.38-2.05 4.4-3.72 4.49-3.72.1.01.36.45.59.98zm8.64.42c3.71.76 6.95 1.44 7.21 1.5.37.09-.52.65-4.44 2.8-2.7 1.48-5.76 3.16-6.8 3.75-1.05.59-1.91 1.04-1.93 1.02-.02-.02.09-.57.24-1.23.56-2.4.21-5.4-.91-7.79-.33-.69-.6-1.3-.6-1.35 0-.17.67-.05 7.23 1.3zm10.11 4.53c-.19.84-.6 2.27-.93 3.2-.71 2.04-3.3 7.33-3.65 7.47-.14.06-1.36-.51-2.69-1.25-1.33-.74-3.26-1.72-4.27-2.17l-1.84-.82 6.79-4.35c5.63-3.61 6.8-4.29 6.86-3.97.04.2-.08 1.05-.27 1.89zm4.96-1.55c7.04 2.02 14.47 4.75 14.04 5.16-.09.08-1.01.39-2.04.68-5.31 1.51-12.7 4.06-16.16 5.58-1.07.47-2 .82-2.05.77-.05-.05.37-1.61.94-3.45 1.11-3.63 2.4-8.53 2.4-9.16 0-.28.1-.37.35-.3.18.05 1.31.37 2.52.72zm-30.27 7.3c1.61.53 3.48 1.24 4.17 1.59 1.25.63 1.26.64.9 1.03-.64.71-7.63 7.22-7.83 7.29-.1.04-.18-.95-.18-2.38-.01-2.48-.29-6.95-.5-7.95-.16-.73-.03-.72 3.44.42zm44.7 1.29c-1.54 2.54-4.07 6.16-5.9 8.44-1.87 2.34-5.82 6.74-6.05 6.74-.09 0-.66-.71-1.27-1.59-2.25-3.21-4.86-5.99-7.15-7.61-.22-.15-.35-.32-.3-.37.05-.05 3.81-1.43 8.33-3.07 9.16-3.32 13.19-4.67 13.44-4.49.02.03-.47.9-1.1 1.95zm5.73-.43c6.32 4.41 10.62 7.98 12.18 10.11.39.54.68 1 .64 1.03-.04.03-2.07.26-4.53.5-9.81.97-16.8 1.95-20.5 2.89-.99.25-1.82.44-1.83.43-.02-.02.63-.82 1.46-1.81 4.28-5.13 8.14-10.47 9.58-13.24.38-.73.75-1.33.83-1.33.07-.01 1.04.63 2.17 1.42zm-35.43 5.47c1.21.65 2.14 1.25 2.09 1.35-.09.18-10.76 6.02-10.85 5.94-.02-.02.53-1.77 1.23-3.91s1.38-4.46 1.51-5.17l.24-1.3 1.8.96c1 .53 2.77 1.48 3.98 2.13zm-8.93.34c-1.03 3.57-3.12 8.17-4.07 8.97-.22.18-.65-.07-2.06-1.21-.99-.8-2-1.59-2.27-1.77-.26-.18-.45-.37-.41-.42.73-.73 9.23-7.58 9.27-7.47.03.07-.18.93-.46 1.9zm19.32 6.21c1.61 1.07 5.17 4.26 4.98 4.46-.05.05-3.67 1.23-8.03 2.6-4.36 1.38-9.22 2.94-10.8 3.47-1.59.53-2.89.95-2.9.93-.02-.02 1.09-1.28 2.46-2.81 3.57-3.98 7.24-8.25 8.54-9.93l1.12-1.45 1.47.79c.79.44 2.23 1.32 3.16 1.94zm-8.26-2.29c-.1.13-1.06 1.35-2.14 2.72-1.08 1.36-3.66 4.68-5.76 7.37l-3.81 4.9-.13-.83c-.24-1.61-1.1-4.74-1.59-5.81l-.49-1.07 2.42-1.21c2.5-1.25 7.71-4.08 10.15-5.5 1.54-.9 1.64-.94 1.35-.57zm-20.21 5.92c.99.51 1.92 1.17 1.92 1.38 0 .32-6.45 5.3-6.62 5.11-.04-.04.54-1.19 1.29-2.56.76-1.37 1.52-2.9 1.7-3.42.18-.52.46-.94.6-.94.16 0 .66.2 1.11.43zm5.5 6.13c.45.87.91 3.32.67 3.54-.1.09-2.76 1.35-5.93 2.8-3.17 1.45-7.28 3.4-9.17 4.34-1.88.94-3.31 1.6-3.17 1.48.14-.13 2.21-1.86 4.61-3.86 4.64-3.86 9.93-8.47 10.9-9.49l.58-.61.57.55c.32.3.74.86.94 1.25zm-5.21-.05c-.46.41-2.94 2.58-5.5 4.8C42.08 67 39 69.68 37.8 70.73c-2.42 2.11-2.42 2.11.67-1.92 2.39-3.12 3.64-4.28 7.07-6.58 1.67-1.12 4.99-2.99 5.31-2.99.07-.01-.25.34-.71.75zm24.03 2.12c.13.65.28 2.69.35 4.51l.12 3.32-.77-.36c-2.66-1.23-10.13-5.44-9.85-5.55 1.63-.65 9.7-3.33 9.79-3.24.07.07.23.66.36 1.32zm-6.34 5.94c3.11 1.83 5.68 3.35 5.72 3.38.04.03-.37.37-.88.75-.99.73-11.54 6.18-11.68 6.04-.04-.04.1-.95.31-2 .43-2.12.82-8.44.63-10.45-.06-.71-.04-1.21.06-1.15.11.06 2.73 1.6 5.84 3.43zm-8.6-1.34c.24 1.97-.05 5.93-.58 7.99-.63 2.42-.99 3.43-1.26 3.52-.37.13-2.67-1.97-4.08-3.72-1.42-1.76-3.28-5.08-3-5.35.17-.16 8.39-3.55 8.64-3.56.08-.01.21.5.28 1.12zm-10.08 4.95c.87 1.8 2.86 4.4 5.04 6.6 1.4 1.41 1.75 1.87 1.53 2.01-.98.66-5.35 2.71-8.11 3.79-3.35 1.32-7.7 2.82-7.8 2.7-.04-.04.96-1.86 2.22-4.04 2.73-4.74 6.18-11.44 6.18-11.99 0-.7.29-.42.94.93zm-5.16.11c-.05.14-.47 1.18-.92 2.33-1.94 4.92-5.71 11.6-6.55 11.6-.65 0-1.61-3.89-1.88-7.63l-.14-1.88 4.61-2.33c2.54-1.28 4.69-2.33 4.8-2.33.09-.01.13.1.08.24zm30.78 4.55c.02 2.83-1.17 9.68-1.8 10.37-.26.29-3.19-.79-5.82-2.15-2.36-1.22-6.24-3.63-6.24-3.87 0-.07.59-.37 1.33-.68 1.4-.59 7.91-4.07 10.67-5.7l1.59-.94.14.72c.05.39.12 1.42.13 2.25zm-43.43 3.27c.27 2.24.96 4.98 1.82 7.16.35.89.6 1.66.56 1.7-.34.31-14.19 4.12-16.02 4.41l-.87.14.13-.67c.19-.95 1.53-3.69 2.53-5.17 1.24-1.84 4.31-4.92 6.34-6.35 1.51-1.07 5.15-3.19 5.26-3.07.01.01.13.84.25 1.85zm31.42 4.72c4.28 2.05 5.9 2.76 7.95 3.47l1.57.54-.99.5c-5.61 2.84-15.53 6.89-18.1 7.39-.57.11-.65.08-.54-.2.44-1.15 6.36-13.38 6.47-13.38.07-.01 1.72.76 3.64 1.68zm-7.53-.46c-.3 1.44-1.93 6.11-2.88 8.23-.82 1.84-2.72 5.43-3.06 5.77-.15.15-3.53-1.76-5.13-2.9-1.8-1.28-5.74-5.08-5.63-5.43.04-.13 2.44-1.05 5.33-2.05 6.09-2.1 9.5-3.37 10.49-3.88.96-.5 1.04-.47.88.26zm17.03 6.45c-.06.42-.4 2.26-.77 4.12-1.16 5.83-2.57 9.81-3.47 9.81-1.24 0-9.73-2.06-12.47-3.03-1.86-.66-3.47-1.41-4-1.88-.33-.29-.16-.39 2.28-1.39 7.85-3.2 16.9-7.28 17.88-8.06.57-.45.66-.39.55.43zm-39.72 1.78c-.89 1.59-2.72 4.22-6.2 8.92l-2.97 4-.89-.64c-1.25-.89-3.23-3.05-4.06-4.42-.89-1.47-1.5-3.28-1.57-4.66l-.06-1.07 1.47-.15c1.99-.2 7.55-1.35 11.52-2.39 1.8-.47 3.3-.83 3.34-.8.03.04-.23.58-.58 1.21zm8.63 4.11c.99.71 2.35 1.61 3.05 2.02l1.27.74-.57.24c-.32.13-4.93 1.81-10.26 3.74-9.1 3.29-9.7 3.48-9.95 3.14-.15-.2-.25-.41-.23-.48.02-.07 2.48-3.24 5.47-7.07l5.43-6.95 2 1.67c1.12.93 2.8 2.24 3.79 2.95zm2.24 10.45c-1.99 2.97-3.67 5.48-3.73 5.56-.15.2-3.33-.55-5.71-1.34-2.5-.84-5.58-2.4-6.78-3.43l-.87-.75 1.96-.53c8.03-2.19 18.65-5 18.7-4.96.04.01-1.58 2.48-3.57 5.45zm9.56-4.5c4.25 1.46 8.13 2.29 13.16 2.83l1.39.15-3.75 1.35c-9.36 3.38-16.94 5.75-20.76 6.49-1.07.21-2.05.38-2.16.38-.11 0 .66-1.05 1.71-2.32 2.86-3.49 5.96-7.46 6.78-8.68.4-.59.8-1.09.89-1.09.09.01 1.31.4 2.74.89zm13.95 7.88c-1.61 4.16-2.79 6.69-3.21 6.85-.8.31-11.85-1.32-15.22-2.23-2.24-.61-3.67-1.2-3.25-1.35.16-.06 1.76-.43 3.57-.84 5.85-1.32 14.77-4.03 18.46-5.61.48-.2.9-.35.93-.32.02.03-.55 1.6-1.28 3.5z" />
+
+    </symbol>
+
 </svg>
 
 <body class="bg-black bg-gradient font-monospace text-white">
 
     <main class="container-fluid ">
         <div class="row">
-            <div class="col-1 col-md-2">
+            <div class="col-1 col-md-1">
             </div>
 
-            <div class="col-10 col-md-8 d-flex justify-content-center pt-5 p-0">
+            <div class="col-10 d-flex justify-content-center pt-5">
 
-                <div class="row">
+                <div class="row m-0">
 
                     <!-- Presentacion principal -->
                     <div class="col-12 col-md-3">
@@ -267,88 +297,80 @@
                         </div>
 
                         <!-- Redes sociales -->
-                        <div class="d-flex align-items-center">
-
-                            <a class="pe-2" href="mailto:jorgeherediavzla@gmail.com" target="_blank">
-
-                                <span class="badge bg-success bg-gradient rounded-pill px-3">
-
-                                    <svg class="bi pe-none me-2 " width="25" height="25">
-                                        <use xlink:href="#email"></use>
-                                    </svg>
-
-                                    jorgeherediavzla@gmail.com
-                                </span>
-                            </a>
 
 
-                            <a class="me-2 btn border border-2 border-success rounded rounded-3"
-                                href="./sintesis-curricular-jorge-heredia.docx">
+                    </div>
 
-                                <svg class="bi pe-none" width="20" height="20">
-                                    <use xlink:href="#curriculum"></use>
+                    <div class="d-flex align-items-center  flex-wrap gap-2 justify-content-center justify-content-md-end">
+
+                        <a class="pe-2" href="mailto:jorgeherediavzla@gmail.com" target="_blank">
+
+                            <span class="badge bg-success bg-gradient rounded-pill px-3">
+
+                                <svg class="bi pe-none me-2 " width="25" height="25">
+                                    <use xlink:href="#email"></use>
                                 </svg>
 
-                            </a>
+                                jorgeherediavzla@gmail.com
+                            </span>
+                        </a>
+
+                        <a class="me-2 btn border border-2 border-success rounded rounded-3"
+                            href="./sintesis-curricular-jorge-heredia.docx">
+
+                            <svg class="bi pe-none" width="20" height="20">
+                                <use xlink:href="#curriculum"></use>
+                            </svg>
+
+                        </a>
+
+                        <a class="me-2 btn border border-2 border-success rounded rounded-3"
+                            href="https://github.com/JLHJ21" target="_blank">
 
 
-                            <a class="me-2 btn border border-2 border-success rounded rounded-3"
-                                href="https://github.com/JLHJ21" target="_blank">
+                            <svg class="bi pe-none" width="20" height="20">
+                                <use xlink:href="#github"></use>
+                            </svg>
 
+                        </a>
 
-                                <svg class="bi pe-none" width="20" height="20">
-                                    <use xlink:href="#github"></use>
-                                </svg>
+                        <a class="me-2 btn border border-2 border-success rounded rounded-3"
+                            href="https://www.linkedin.com/in/jorge-luis-heredia-jaimes-053a3131b/" target="_blank">
 
-                            </a>
+                            <svg class="bi pe-none" width="20" height="20">
+                                <use xlink:href="#linkedin"></use>
+                            </svg>
 
-
-                            <a class="me-2 btn border border-2 border-success rounded rounded-3"
-                                href="https://www.linkedin.com/in/jorge-luis-heredia-jaimes-053a3131b/" target="_blank">
-
-                                <svg class="bi pe-none" width="20" height="20">
-                                    <use xlink:href="#linkedin"></use>
-                                </svg>
-
-                            </a>
-
-                        </div>
-
-
-                        </iv>
+                        </a>
 
                     </div>
 
                     <!-- sobre mi, resumen -->
                     <div>
 
-                        <p class="fs-2 fw-bold pt-3">
+                        <p class="fs-2 fw-bold pt-3 text-uppercase text-center text-md-start">
                             Sobre mí
                         </p>
 
                         <p>¡Hola que tal, me llamo Jorge! Soy un ingeniero en informatica especializado en la creación
                             de páginas webs desde Back-End hasta Front-End, algunos hasta dirían que es Full-Stack pero
                             a mi me gusta llamarle "Un poco de todo"</p>
-
                     </div>
 
-                    <hr class="my-3">
                     <!-- tecnologias -->
-                    <div>
-                        <p class="fs-2 fw-bold pt-2">
+                    <div class="border-top my-4">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
                             Tecnologías
                         </p>
 
-                        <div class="row ps-3">
-
+                        <div class="row m-0 gap-2 overflow-y-auto display-scroll">
                             <?php
-
                             $tecnologias = array(
-                                array('fa-react', 'React.js'),
-                                array('fa-next-js', 'Next js'),
+                                array('fa-react', 'ReactJS'),
+                                array('fa-next-js', 'NextJS'),
                                 array('fa-laravel', 'Laravel (RestAPI)'),
 
-                                array('fa-tailwind', 'Tailwind'),
+                                array('fa-tailwind', 'Tailwind CSS'),
                                 array('cib-bootstrap', 'Bootstrap'),
                                 array('cil-chart', 'ChartJS'),
 
@@ -357,17 +379,19 @@
                                 array('cib-javascript', 'JavaScript'),
 
                                 array('cib-mysql', 'MySQL'),
+                                array('cib-postgresql', 'PostgreSQL'),
 
                                 array('cib-django', 'Django'),
                                 array('cib-python', 'Python'),
-
+                                array('stripe', 'Stripe'),
+                                array('sql-server', 'SQL Server'),
                             );
 
                             foreach ($tecnologias as $key => $value) {
                             ?>
                                 <div class="col-auto p-0 pt-2">
 
-                                    <div class="bg-success bg-gradient rounded-3 px-3 me-3">
+                                    <div class="bg-success bg-gradient rounded-3 px-3">
 
                                         <div class="d-flex align-items-center">
 
@@ -388,9 +412,9 @@
                     </div>
 
                     <!-- Experiencia  -->
-                    <div class="mt-3">
+                    <div class="border-top my-4">
 
-                        <p class="fs-2 fw-bold pt-2">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
                             Experiencia
                         </p>
 
@@ -399,11 +423,18 @@
 
                             $trabajos = array(
                                 array(
-                                    'icono' => 'cil-laptop',
+                                    'icono' => 'briefcase',
+                                    'empresa' => '735 - Freelancer',
+                                    'cargo' => 'Programador Front-End',
+                                    'descripcion' => 'Implementación de APIS a sistemas React y QA parcial.',
+                                    'tiempo' => 'Febrero 2026 - Actualmente'
+                                ),
+                                array(
+                                    'icono' => 'screen',
                                     'empresa' => 'IADUK - Freelancer',
-                                    'cargo' => 'Programador',
-                                    'descripcion' => 'Creación de e-commerce y sistema de gestión de base de datos con Next.js junto con su conexión de base datos y el uso de Vercel, Stripe y otras herramientas de terceros.',
-                                    'tiempo' => 'Febrero 2025 - Actualmente'
+                                    'cargo' => 'Programador Full-Stack',
+                                    'descripcion' => 'Creación de diseños, implementación de los diseños y su adaptabilidad en pequeños dispositivos en herramientas como NextJS, Flask, creación de bases de datos Microsoft SQL Server, creación de webhooks para realizar pagos y subscripciones con Stripe, creación de lógica usando NextJS junto a su conexión e implementación en el front-end, SEO (indexaciones, sitemap, robots.txt), conexiones con Azure (Blob Container y Azure SQL Database).',
+                                    'tiempo' => 'Febrero 2025 - Mayo 2026'
                                 ),
                                 array(
                                     'icono' => 'laptop-medical',
@@ -421,10 +452,12 @@
                                 )
 
                             );
+
+
                             foreach ($trabajos as $key => $value) {
                             ?>
-                                <div class="d-flex flex-wrap">
-                                    <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
+                                <div class="<?= (count($trabajos) !== ($key + 1)) ? 'border-bottom' : '' ?> row border-secondary  py-3">
+                                    <div class="col-12 justify-content-center col-sm-auto d-flex align-self-start mb-4">
 
                                         <svg class="bi pe-none mt-1  bg-success bg-gradient  rounded-circle p-3"
                                             style="width:75px; height:75px">
@@ -432,22 +465,29 @@
                                         </svg>
 
                                     </div>
-                                    <div class="col-8 col-md-7">
+                                    <div class="col pe-0 col-md-7">
 
-                                        <p class="fs-4 mb-0 fw-bold">
+                                        <p class="fs-4 mb-0 fw-bold text-center text-md-start">
                                             <?= $value['empresa'] ?>
                                         </p>
 
-                                        <p class="fs-5 my-2">
+                                        <p class="fs-5 my-2 text-center text-md-start">
                                             <?= $value['cargo'] ?>
                                         </p>
 
-                                        <p>
+                                        <div class="d-block d-md-none text-center mb-2">
+                                            <span class="badge bg-success bg-gradient rounded-pill truncate">
+
+                                                <?= $value['tiempo'] ?>
+                                            </span>
+                                        </div>
+
+                                        <p class="display-scroll overflow-y-auto">
                                             <?= $value['descripcion'] ?>
                                         </p>
                                     </div>
-                                    <div class="col-12 col-md-3 text-end">
-                                        <span class="badge bg-success bg-gradient rounded-pill">
+                                    <div class="d-none d-md-block col text-end">
+                                        <span class="badge bg-success bg-gradient rounded-pill truncate">
 
                                             <?= $value['tiempo'] ?>
                                         </span>
@@ -459,10 +499,11 @@
 
                     </div>
 
-                    <!-- Proyectos  -->
-                    <div class=" mt-3">
 
-                        <p class="fs-2 fw-bold pt-2">
+                    <!-- Proyectos  -->
+                    <div class="border-top my-4">
+
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
                             Proyectos
                         </p>
 
@@ -474,22 +515,44 @@
 
                                 array(
                                     'icono' => 'shop',
+                                    'titulo' => 'Sistema para una ferretería',
+                                    'propiedad' => 'Autoría propia',
+                                    'descripcion' => 'Proyecto gestionar un negocio, con prestamos, carrito de compras, diferentes monedas de pago, facturas y seguimiento de ventas.',
+                                    'tecnologias' => array(
+                                        array('icono' => 'cib-postgresql', 'nombre' => 'PostgreSQL'),
+                                        array('icono' => 'fa-tailwind', 'nombre' => 'Tailwind'),
+                                        array('icono' => 'fa-nextjs', 'nombre' => 'NextJS'),
+
+                                    ),
+                                    'imagenes_carusel' => array(
+                                        './imagenes/pagina-ferreteria-next/2.PNG',
+                                        './imagenes/pagina-ferreteria-next/4.PNG',
+                                        './imagenes/pagina-ferreteria-next/3.PNG',
+                                        './imagenes/pagina-ferreteria-next/5.PNG',
+                                        './imagenes/pagina-ferreteria-next/1.PNG',
+                                    ),
+                                    'enlace_codigo' => false,
+                                    'tiempo' => 'Octubre 2024 - Octubre 2024',
+                                ),
+
+                                array(
+                                    'icono' => 'shop',
                                     'titulo' => 'Plataforma de mangas/manhwas/comics',
                                     'propiedad' => 'Autoría propia',
                                     'descripcion' => 'Proyecto con CRUD sobre autores, editoriales, generos, títulos y capítulos, controlador de vistas, buscador, paginación y demás.',
                                     'tecnologias' => array(
                                         array('icono' => 'fa-laravel', 'nombre' => 'Laravel'),
-                                        array('icono' => 'cib-postgresql', 'nombre' => 'Postgresql'),
+                                        array('icono' => 'cib-postgresql', 'nombre' => 'PostgreSQL'),
                                         array('icono' => 'cib-bootstrap', 'nombre' => 'Bootstrap'),
                                         array('icono' => 'fa-react', 'nombre' => 'React'),
 
                                     ),
                                     'imagenes_carusel' => array(
+                                        './imagenes/pagina-mangas/1.PNG',
                                         './imagenes/pagina-mangas/4.PNG',
-                                        './imagenes/pagina-mangas/2.PNG',
-                                        './imagenes/pagina-mangas/3.PNG',
                                         './imagenes/pagina-mangas/5.PNG',
                                         './imagenes/pagina-mangas/6.PNG',
+                                        './imagenes/pagina-mangas/1.PNG',
                                     ),
                                     'enlace_codigo' => false,
                                     'tiempo' => 'Octubre 2024 - Octubre 2024',
@@ -501,7 +564,7 @@
                                     'descripcion' => 'Proyecto con CRUD y sistema de usuario para aprendizaje de nuevas herramientas.',
                                     'tecnologias' => array(
                                         array('icono' => 'fa-laravel', 'nombre' => 'Laravel'),
-                                        array('icono' => 'cib-postgresql', 'nombre' => 'Postgresql'),
+                                        array('icono' => 'cib-postgresql', 'nombre' => 'PostgreSQL'),
                                         array('icono' => 'cib-bootstrap', 'nombre' => 'Bootstrap'),
                                         array('icono' => 'fa-react', 'nombre' => 'React'),
 
@@ -606,105 +669,86 @@
 
                             );
                             foreach ($proyectos as $proyecto_key => $proyecto) {
-                                if ($proyecto_key == count($proyectos) - 1) {
-                                    $class_div = 'col-12 col-md-5 pt-4 pt-md-2';
-                                    $class_div_principal = 'd-md-flex';
-                                } else {
-                                    $class_div = 'col-12 col-md-5 mb-4 pt-4 pt-md-2';
-                                    $class_div_principal = 'd-md-flex pb-4';
-                                }
+                                // Definimos las clases base para el contenedor principal de cada proyecto
+                                // Quitamos 'gap-3' porque rompe el ancho en móviles y usamos gutters de Bootstrap (g-4)
+                                $es_ultimo = ($proyecto_key == count($proyectos) - 1);
+
+                                $class_row_principal = 'row align-items-center m-0 '; // m-0 evita el scroll horizontal
+                                $class_row_principal .= $es_ultimo ? 'pb-2' : 'pb-4 border-bottom border-secondary';
+                                $class_row_principal .= ($proyecto_key !== 0) ? ' pt-4' : '';
+
+                                // El div del carrusel siempre será col-12 en móvil y col-md-5 en escritorio
+                                $class_div_carusel = 'col-12 col-md-4 pt-0 pt-md-2 px-0 px-md-3';
                             ?>
-                                <div class="<?= $class_div_principal ?>">
 
-                                    <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
-
-                                        <svg class="bi pe-none mt-1  bg-success bg-gradient  rounded-circle p-3"
+                                <div class="<?= $class_row_principal ?> g-4 p-0">
+                                    <div class="col-md-auto d-none d-md-block text-center">
+                                        <svg class="bi pe-none bg-success bg-gradient rounded-circle p-3"
                                             style="width:75px; height:75px">
                                             <use xlink:href="#<?= $proyecto['icono'] ?>"></use>
                                         </svg>
-
                                     </div>
-                                    <div class="col-12 col-md-6">
 
-                                        <p class="fs-4 mb-0 fw-bold">
+                                    <div class="col-12 col-md-6">
+                                        <p class="fs-4 mb-0 fw-bold text-center text-md-start">
                                             <?= $proyecto['titulo'] ?>
                                         </p>
 
-                                        <p class="fs-5 my-2">
+                                        <p class="fs-5 my-2 text-center text-md-start text-secondary">
                                             <?= $proyecto['propiedad'] ?>
                                         </p>
 
-                                        <p class="mb-2">
+                                        <p class="mb-3 text-center text-md-start">
                                             <?= $proyecto['descripcion'] ?>
                                         </p>
 
-                                        <div class="row pe-2 pe-md-4">
-                                            <?php foreach ($proyecto['tecnologias'] as $key => $tecnologia) { ?>
-                                                <div class="col-auto pt-2 pe-0">
-                                                    <span
-                                                        class="badge bg-dark bg-gradient border-white border rounded-3 p-0 px-2 d-flex  align-items-center">
-
-                                                        <svg class="bi pe-none p-1 h-100" width="30px" height="30px">
-                                                            <use xlink:href="#<?= $tecnologia['icono']; ?>"></use>
-                                                        </svg>
-                                                        <p class="justify-content-center text center m-0">
-                                                            <?= $tecnologia['nombre']; ?>
-                                                        </p>
-                                                    </span>
-                                                </div>
+                                        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mb-3">
+                                            <?php foreach ($proyecto['tecnologias'] as $tecnologia) { ?>
+                                                <span class="badge bg-dark bg-gradient border-white border rounded-3 p-1 px-2 d-flex align-items-center">
+                                                    <svg class="bi pe-none me-1" width="20" height="20">
+                                                        <use xlink:href="#<?= $tecnologia['icono']; ?>"></use>
+                                                    </svg>
+                                                    <small><?= $tecnologia['nombre']; ?></small>
+                                                </span>
                                             <?php } ?>
                                         </div>
 
-                                        <div class="col-12 col-md-3 pt-2">
-
-                                            <?php
-                                            if ($proyecto['enlace_codigo'] !== false) { ?>
+                                        <?php if ($proyecto['enlace_codigo'] !== false) { ?>
+                                            <div class="d-flex justify-content-center justify-content-md-start">
                                                 <a href="<?= $proyecto['enlace_codigo'] ?>"
-                                                    class="badge bg-success bg-gradient rounded-5 p-0 mt-3 d-flex justify-content-center align-items-center"
+                                                    class="btn btn-success btn-sm rounded-pill px-4"
                                                     target="_blank">
-
-                                                    <svg class=" bi pe-none p-1 h-100" width="40px" height="40px">
+                                                    <svg class="bi" width="20" height="20" fill="currentColor">
                                                         <use xlink:href="#github"></use>
                                                     </svg>
+                                                    Código
                                                 </a>
-                                            <?php } ?>
-
-                                        </div>
-
+                                            </div>
+                                        <?php } ?>
                                     </div>
-                                    <div class="<?= $class_div; ?>">
-                                        <div id="carusel<?= $proyecto_key ?>" class="carousel slide carousel-fade">
-                                            <div class="carousel-inner">
-                                                <?php foreach ($proyecto['imagenes_carusel'] as $key => $imagen) {
 
-                                                    if ($key == 0) {
-                                                        $class = 'carousel-item active';
-                                                    } else {
-                                                        $class = 'carousel-item';
-                                                    }
-                                                ?>
-                                                    <div class="<?= $class; ?>">
-                                                        <img src="<?= $imagen ?>" class="d-block w-100 rounded rounded-5"
-                                                            alt="<?= $proyecto['titulo'] ?>" loading="lazy">
-                                                        <div class="carousel-caption d-none d-md-block">
-                                                        </div>
+                                    <div class="<?= $class_div_carusel ?>">
+                                        <div id="carusel<?= $proyecto_key ?>" class="carousel slide carousel-fade overflow-hidden rounded-5 shadow">
+                                            <div class="carousel-inner">
+                                                <?php foreach ($proyecto['imagenes_carusel'] as $img_key => $imagen) { ?>
+                                                    <div class="carousel-item <?= ($img_key == 0) ? 'active' : '' ?>">
+                                                        <img src="<?= $imagen ?>" class="d-block w-100"
+                                                            alt="<?= $proyecto['titulo'] ?>"
+                                                            style="aspect-ratio: 16/9; object-fit: cover;"
+                                                            loading="lazy">
                                                     </div>
                                                 <?php } ?>
                                             </div>
-                                            <button class="carousel-control-prev" type="button"
-                                                data-bs-target="#carusel<?= $proyecto_key ?>" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon bg-dark rounded"
-                                                    aria-hidden="true"></span>
-                                                <span class="visually-hidden">Anterior</span>
+
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carusel<?= $proyecto_key ?>" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
                                             </button>
-                                            <button class="carousel-control-next" type="button"
-                                                data-bs-target="#carusel<?= $proyecto_key ?>" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon bg-dark rounded"
-                                                    aria-hidden="true"></span>
-                                                <span class="visually-hidden">Siguiente</span>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carusel<?= $proyecto_key ?>" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
                                             </button>
                                         </div>
                                     </div>
+
                                 </div>
                             <?php } ?>
                         </div>
@@ -712,15 +756,14 @@
 
 
                     <!-- Formación  -->
-                    <div class="mt-3">
+                    <div class="border-top my-4">
 
-                        <p class="fs-2 fw-bold pt-2">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
                             Formación
                         </p>
 
                         <div class="row">
                             <?php
-
                             $formaciones = array(
                                 array(
                                     'icono' => 'graduation-cap',
@@ -730,7 +773,6 @@
                                     'estado' => 'Finalizado',
                                     'enlace_institucion' => 'https://uptaivirtualsarec.com/',
                                 ),
-
                                 array(
                                     'icono' => 'graduation-cap',
                                     'institucion' => 'UPTAIET',
@@ -739,7 +781,6 @@
                                     'estado' => 'Finalizado',
                                     'enlace_institucion' => 'https://uptaivirtualsarec.com/',
                                 ),
-
                                 array(
                                     'icono' => 'graduation-cap',
                                     'institucion' => 'UPTAIET',
@@ -748,7 +789,6 @@
                                     'estado' => 'Finalizado',
                                     'enlace_institucion' => './imagenes/robotica_jorge.pdf',
                                 ),
-
                                 array(
                                     'icono' => 'graduation-cap',
                                     'institucion' => 'FT VE Movistar',
@@ -757,67 +797,60 @@
                                     'estado' => 'Finalizado',
                                     'enlace_institucion' => './imagenes/certificado_movistar_jorge.pdf',
                                 )
-
                             );
+
                             foreach ($formaciones as $key => $formacion) {
+                                $es_ultimo = (count($formaciones) === ($key + 1));
                             ?>
-                                <div class="d-flex pb-2">
+                                <div class="row m-0 py-3 align-items-center border-secondary <?= !$es_ultimo ? 'border-bottom' : '' ?>">
 
-                                    <div class="col-auto d-flex align-self-star me-4 mb-4 d-none d-md-block">
-
-                                        <svg class="bi pe-none mt-1  bg-success bg-gradient  rounded-circle p-3"
+                                    <div class="col-md-auto d-none d-md-block pe-4">
+                                        <svg class="bi pe-none bg-success bg-gradient rounded-circle p-3"
                                             style="width:75px; height:75px">
                                             <use xlink:href="#<?= $formacion['icono'] ?>"></use>
                                         </svg>
-
                                     </div>
-                                    <div class="col-9 col-md-8 col-md-7">
 
-                                        <p class="fs-4 mb-0 fw-bold">
+                                    <div class="col col-md">
+                                        <p class="fs-4 mb-0 fw-bold text-center text-md-start">
                                             <?= $formacion['institucion'] ?>
                                         </p>
-
-                                        <p class="fs-5 my-2">
+                                        <p class="fs-5 my-1 text-center text-md-start text-secondary">
                                             <?= $formacion['titulo'] ?>
                                         </p>
-
-                                        <p>
+                                        <p class="mb-0 text-center text-md-start small">
                                             <?= $formacion['descripcion'] ?>
                                         </p>
                                     </div>
-                                    <div class="col-3 col-md-4 text-end">
 
-                                        <span class="badge bg-dark bg-gradient rounded-pill">
+                                    <div class="col-12 col-md-auto d-flex d-md-block justify-content-center align-items-center gap-3 text-md-end mt-3 mt-md-0">
 
-                                            <p class="fw-bold p-0 m-0 fs-6">
-
-                                                <?= $formacion['estado'] ?>
-                                            </p>
+                                        <span class="badge bg-dark bg-gradient rounded-pill px-3 py-2 fw-bold">
+                                            <?= $formacion['estado'] ?>
                                         </span>
 
-                                        <br>
-
-                                        <a href="<?= $formacion['enlace_institucion'] ?>"
-                                            class="badge bg-success border-2 bg-gradient rounded-end-circle px-2 mt-3"
-                                            target="_blank">
-
-                                            <svg class=" bi pe-none p-1" width="40px" height="40px">
-                                                <use xlink:href="#arrow-right-circle"></use>
-                                            </svg>
-                                        </a>
+                                        <div class="mt-0 mt-md-2">
+                                            <a href="<?= $formacion['enlace_institucion'] ?>"
+                                                class="text-success"
+                                                target="_blank">
+                                                <svg class="bi" width="35" height="35">
+                                                    <use xlink:href="#arrow-right-circle"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
 
                                     </div>
                                 </div>
                             <?php } ?>
                         </div>
 
-
                     </div>
 
-                    <!-- Sin terminar -->
-                    <div class="mt-3">
 
-                        <p class="fs-2 fw-bold pt-2">
+                    <!-- Sin terminar -->
+                    <div class="border-top my-4">
+
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
                             En proceso
                         </p>
                         <div class="row">
@@ -829,23 +862,23 @@
                                     'descripcion' => 'Sistema para la gestión de una biblioteca o libreria, con su sistema de prestamos.',
                                     'estado' => 'En proceso'
                                 ),
-                                array(
-                                    'imagen' => './imagenes/pagina-ferreteria-next/1.PNG',
-                                    'titulo' => 'Pagina de ferretería',
-                                    'descripcion' => 'Plataforma para gestionar un negocio, con prestamos, facturas y seguimiento de ventas.',
-                                    'estado' => 'En proceso'
-                                )
+                                // array(
+                                //     'imagen' => './imagenes/pagina-ferreteria-next/1.PNG',
+                                //     'titulo' => 'Pagina de ferretería',
+                                //     'descripcion' => 'Plataforma para gestionar un negocio, con prestamos, facturas y seguimiento de ventas.',
+                                //     'estado' => 'En proceso'
+                                // )
                             );
                             foreach ($en_procesos as $key => $proceso) { ?>
-                                <div class="col-6 col-md-4">
+                                <div class="col-12 col-sm-6 col-md-4 <?= (count($en_procesos) !== ($key + 1)) ? 'border-bottom' : '' ?>">
                                     <div class="card bg-black bg-gradient border-white text-white h-100">
                                         <img src="<?= $proceso['imagen'] ?>" class="card-img-top"
                                             alt="<?= $proceso['titulo'] ?>" loading="lazy">
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column">
                                             <h5 class="card-title"><?= $proceso['titulo'] ?></h5>
                                             <p class="card-text"><?= $proceso['descripcion'] ?></p>
 
-                                            <span class="badge bg-success bg-gradient rounded-pill w-100">
+                                            <span class="badge bg-success bg-gradient rounded-pill w-100 mt-auto">
 
                                                 <p class="p-0 m-0 fs-6">
 

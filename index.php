@@ -525,11 +525,11 @@
 
                                     ),
                                     'imagenes_carusel' => array(
-                                        './imagenes/pagina-ferreteria-next/2.PNG',
-                                        './imagenes/pagina-ferreteria-next/4.PNG',
-                                        './imagenes/pagina-ferreteria-next/3.PNG',
-                                        './imagenes/pagina-ferreteria-next/5.PNG',
-                                        './imagenes/pagina-ferreteria-next/1.PNG',
+                                        './imagenes/pagina-ferreteria-next1/2.png',
+                                        './imagenes/pagina-ferreteria-next1/4.png',
+                                        './imagenes/pagina-ferreteria-next1/3.png',
+                                        './imagenes/pagina-ferreteria-next1/5.png',
+                                        './imagenes/pagina-ferreteria-next1/1.png',
                                     ),
                                     'enlace_codigo' => false,
                                     'tiempo' => 'Octubre 2024 - Octubre 2024',
@@ -548,11 +548,11 @@
 
                                     ),
                                     'imagenes_carusel' => array(
-                                        './imagenes/pagina-mangas/1.PNG',
-                                        './imagenes/pagina-mangas/4.PNG',
-                                        './imagenes/pagina-mangas/5.PNG',
-                                        './imagenes/pagina-mangas/6.PNG',
-                                        './imagenes/pagina-mangas/1.PNG',
+                                        './imagenes/pagina-mangas/1.png',
+                                        './imagenes/pagina-mangas/4.png',
+                                        './imagenes/pagina-mangas/5.png',
+                                        './imagenes/pagina-mangas/6.png',
+                                        './imagenes/pagina-mangas/1.png',
                                     ),
                                     'enlace_codigo' => false,
                                     'tiempo' => 'Octubre 2024 - Octubre 2024',
@@ -863,7 +863,7 @@
                                     'estado' => 'En proceso'
                                 ),
                                 // array(
-                                //     'imagen' => './imagenes/pagina-ferreteria-next/1.PNG',
+                                //     'imagen' => './imagenes/pagina-ferreteria-next1/1.png',
                                 //     'titulo' => 'Pagina de ferretería',
                                 //     'descripcion' => 'Plataforma para gestionar un negocio, con prestamos, facturas y seguimiento de ventas.',
                                 //     'estado' => 'En proceso'

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum</title>
+    <title data-en="Resume">Curriculum</title>
     <link rel="stylesheet" href="./framework/bootstrap/bootstrap.css">
 
 </head>
@@ -19,9 +19,7 @@
     /* https://stackoverflow.com/a/73562170/20676567 */
 
     .carousel-inner {
-        /* height: 0; */
-        /* padding-bottom: 95%; */
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 16 / 9;
         width: 100%;
     }
 
@@ -40,17 +38,427 @@
         object-fit: cover;
     }
 
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: 0;
+        bottom: 0;
+        width: 48px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.45);
+        transition: background-color 0.2s ease;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        background-color: rgba(20, 92, 50, 0.85);
+    }
+
     @media (max-width: 767px) {
-        .carousel-inner {
-            aspect-ratio: 16 / 9;
-            /* height: 0; */
-            /* padding-bottom: 60%; */
-            /* this sets carousel aspect ratio (4:1 here) */
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 38px;
         }
 
         .display-scroll {
             max-height: 30vh;
         }
+    }
+
+    .tecnologias-seccion {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tecnologias-marquesina {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        padding: 0.25rem 0;
+    }
+
+    .tecnologias-fila {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .tecnologias-pista {
+        display: flex;
+        width: max-content;
+        will-change: transform;
+    }
+
+    .tecnologias-pista--derecha {
+        animation: tecnologias-derecha 35s linear infinite;
+    }
+
+    .tecnologias-pista--izquierda {
+        animation: tecnologias-izquierda 35s linear infinite;
+    }
+
+    .tecnologias-fila:hover .tecnologias-pista {
+        animation-play-state: paused;
+    }
+
+    .tecnologias-grupo {
+        display: flex;
+        flex-shrink: 0;
+        gap: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .tecnologia-item {
+        flex-shrink: 0;
+    }
+
+    @keyframes tecnologias-derecha {
+        from {
+            transform: translateX(-25%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes tecnologias-izquierda {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-25%);
+        }
+    }
+
+    .proyectos-seccion {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .proyectos-lista {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .proyecto-card {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: 65vh;
+        overflow: hidden;
+        border-radius: 1rem;
+        background-color: #000;
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+    }
+
+    .proyecto-card .carousel,
+    .proyecto-card .carousel-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .proyecto-card .carousel-inner {
+        aspect-ratio: auto;
+    }
+
+    .proyecto-capa {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        pointer-events: none;
+    }
+
+    .proyecto-capa>* {
+        pointer-events: auto;
+    }
+
+    .proyecto-cabecera {
+        display: flex;
+        justify-content: center;
+        padding: 0.9rem;
+    }
+
+    .proyecto-titulo-bloque {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        max-width: 92%;
+        padding: 0.4rem 1rem;
+        color: #111;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0.6rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+    }
+
+    .proyecto-titulo-bloque svg {
+        flex-shrink: 0;
+    }
+
+    .proyecto-titulo {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: center;
+    }
+
+    .proyecto-propiedad {
+        margin: 0.15rem 0 0;
+        font-size: 0.78rem;
+        color: #444;
+        text-align: center;
+    }
+
+    .proyecto-info {
+        position: relative;
+        z-index: 2;
+        width: calc(100% - 96px);
+        margin: 0 48px;
+        padding: 0.9rem 1rem;
+        color: #fff;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .proyecto-descripcion {
+        margin: 0 0 0.6rem;
+        font-size: 0.92rem;
+        line-height: 1.4;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    .proyecto-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .proyecto-pie {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proyecto-nav-imagenes {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.5rem 0.5rem;
+    }
+
+    .proyecto-nav-imagenes button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        font-family: inherit;
+        font-size: 0.75rem;
+        line-height: 1;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .proyecto-nav-imagenes button:hover,
+    .proyecto-nav-imagenes button:focus-visible {
+        background-color: #145c32;
+        border-color: #145c32;
+    }
+
+    .proyecto-nav-imagenes button.activo {
+        font-weight: 700;
+        background-color: var(--bs-success);
+        border-color: var(--bs-success);
+    }
+
+    .proyecto-card .carousel-control-prev,
+    .proyecto-card .carousel-control-next {
+        z-index: 4;
+    }
+
+    @media (max-width: 767px) {
+        .proyecto-card {
+            aspect-ratio: 4 / 3;
+        }
+
+        .proyecto-cabecera {
+            padding: 0.6rem;
+        }
+
+        .proyecto-titulo-bloque {
+            max-width: 95%;
+            padding: 0.35rem 0.8rem;
+        }
+
+        .proyecto-titulo {
+            font-size: 1rem;
+        }
+
+        .proyecto-propiedad,
+        .proyecto-descripcion {
+            display: none;
+        }
+
+        .proyecto-info {
+            width: calc(100% - 76px);
+            margin: 0 38px;
+            padding: 0.6rem 0.75rem;
+            cursor: pointer;
+        }
+
+        .proyecto-badges {
+            gap: 0.3rem;
+        }
+
+        .proyecto-nav-imagenes {
+            gap: 0.3rem;
+            padding: 0.25rem 0.4rem 0.35rem;
+        }
+
+        .proyecto-nav-imagenes button {
+            width: 22px;
+            height: 22px;
+            font-size: 0.68rem;
+        }
+
+        .proyecto-info.mostrar-descripcion .proyecto-descripcion {
+            display: block;
+            position: absolute;
+            left: 0.5rem;
+            right: 0.5rem;
+            bottom: calc(100% + 2.6rem);
+            margin: 0;
+            padding: 0.7rem 0.85rem;
+            font-size: 0.85rem;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.55);
+            z-index: 5;
+        }
+
+        .proyecto-info.mostrar-descripcion .proyecto-descripcion::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 7px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.92);
+        }
+    }
+
+    .selector-idioma {
+        position: relative;
+        display: inline-block;
+    }
+
+    .selector-idioma__boton {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.3rem 0.8rem;
+        font-family: inherit;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid var(--bs-success);
+        border-radius: 0.375rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .selector-idioma__boton:hover,
+    .selector-idioma__boton:focus-visible {
+        background-color: #145c32;
+        border-color: #145c32;
+        color: #fff;
+        outline: none;
+    }
+
+    .selector-idioma__flecha {
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid currentColor;
+        transition: transform 0.15s ease;
+    }
+
+    .selector-idioma.abierto .selector-idioma__flecha {
+        transform: rotate(180deg);
+    }
+
+    .selector-idioma__menu {
+        position: absolute;
+        top: calc(100% + 0.35rem);
+        right: 0;
+        z-index: 1050;
+        display: none;
+        min-width: 100%;
+        margin: 0;
+        padding: 0.3rem;
+        list-style: none;
+        background-color: #000;
+        border: 1px solid var(--bs-success);
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    }
+
+    .selector-idioma.abierto .selector-idioma__menu {
+        display: block;
+    }
+
+    .selector-idioma__opcion {
+        display: block;
+        width: 100%;
+        padding: 0.4rem 0.8rem;
+        font-family: inherit;
+        font-size: 0.875rem;
+        color: #fff;
+        text-align: left;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+    }
+
+    .selector-idioma__opcion:hover,
+    .selector-idioma__opcion:focus-visible {
+        background-color: #145c32;
+        color: #fff;
+        outline: none;
+    }
+
+    .selector-idioma__opcion.active {
+        background-color: var(--bs-success);
+        color: #fff;
     }
 </style>
 
@@ -269,6 +677,13 @@
 
 <body class="bg-black bg-gradient font-monospace text-white">
 
+    <?php
+    function texto_atributo($texto)
+    {
+        return htmlspecialchars($texto, ENT_QUOTES, 'UTF-8');
+    }
+    ?>
+
     <main class="container-fluid ">
         <div class="row">
             <div class="col-1 col-md-1">
@@ -276,7 +691,7 @@
 
             <div class="col-10 d-flex justify-content-center pt-5">
 
-                <div class="row m-0">
+                <div class="row m-0 w-100">
 
                     <!-- Presentacion principal -->
                     <div class="col-12 col-md-3">
@@ -285,8 +700,35 @@
                     </div>
                     <div class="col-12 col-md-9 pt-2 pt-md-0 text-center text-md-start">
 
-                        <p class="fs-1 mb-0 fw-bold">Jorge Luis Heredia Jaimes</p>
-                        <p class="fs-3 mb-0 fw-bold">Programador Full-Stack</p>
+                        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between gap-2">
+                            <p class="fs-1 mb-0 fw-bold">Jorge Luis Heredia Jaimes</p>
+
+                            <!-- Selector de idioma -->
+                            <div class="selector-idioma" id="selectorIdiomaContenedor">
+                                <button type="button" class="selector-idioma__boton" id="selectorIdiomaBoton"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span id="idiomaActual">Español</span>
+                                    <span class="selector-idioma__flecha" aria-hidden="true"></span>
+                                </button>
+
+                                <ul class="selector-idioma__menu" id="selectorIdiomaMenu" role="menu">
+                                    <li role="none">
+                                        <button type="button" class="selector-idioma__opcion" data-lang="es"
+                                            role="menuitem">
+                                            Español
+                                        </button>
+                                    </li>
+                                    <li role="none">
+                                        <button type="button" class="selector-idioma__opcion" data-lang="en"
+                                            role="menuitem">
+                                            Inglés
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="fs-3 mb-0 fw-bold" data-en="Full-Stack Developer">Programador Full-Stack</p>
                         <div class="d-flex justify-content-center justify-content-md-start">
                             <svg class="bi pe-none me-1 mt-1" id="direccion_svg" width="28" height="28">
                                 <use xlink:href="#direccion"></use>
@@ -316,7 +758,7 @@
                         </a>
 
                         <a class="me-2 btn border border-2 border-success rounded rounded-3"
-                            href="./sintesis-curricular-jorge-heredia.docx">
+                            href="./curriculum.pdf">
 
                             <svg class="bi pe-none" width="20" height="20">
                                 <use xlink:href="#curriculum"></use>
@@ -348,22 +790,22 @@
                     <!-- sobre mi, resumen -->
                     <div>
 
-                        <p class="fs-2 fw-bold pt-3 text-uppercase text-center text-md-start">
+                        <p class="fs-2 fw-bold pt-3 text-uppercase text-center text-md-start" data-en="About me">
                             Sobre mí
                         </p>
 
-                        <p>¡Hola que tal, me llamo Jorge! Soy un ingeniero en informatica especializado en la creación
+                        <p data-en="Hi there, my name is Jorge! I'm a computer engineer specialized in creating websites from Back-End to Front-End; some might even call it Full-Stack, but I like to call it &quot;A little bit of everything&quot;.">¡Hola que tal, me llamo Jorge! Soy un ingeniero en informatica especializado en la creación
                             de páginas webs desde Back-End hasta Front-End, algunos hasta dirían que es Full-Stack pero
                             a mi me gusta llamarle "Un poco de todo"</p>
                     </div>
 
                     <!-- tecnologias -->
-                    <div class="border-top my-4">
-                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
+                    <div class="border-top my-4 tecnologias-seccion">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start" data-en="Technologies">
                             Tecnologías
                         </p>
 
-                        <div class="row m-0 gap-2 overflow-y-auto display-scroll">
+                        <div class="tecnologias-marquesina">
                             <?php
                             $tecnologias = array(
                                 array('fa-react', 'ReactJS'),
@@ -387,26 +829,33 @@
                                 array('sql-server', 'SQL Server'),
                             );
 
-                            foreach ($tecnologias as $key => $value) {
+                            $items_por_fila = min(10, (int) ceil(count($tecnologias) / 2));
+                            $filas_tecnologias = array_chunk($tecnologias, $items_por_fila);
+                            $direcciones = array('derecha', 'izquierda');
+
+                            foreach ($filas_tecnologias as $fila_key => $fila) {
+                                $direccion = $direcciones[$fila_key % count($direcciones)];
                             ?>
-                                <div class="col-auto p-0 pt-2">
+                                <div class="tecnologias-fila">
+                                    <div class="tecnologias-pista tecnologias-pista--<?= $direccion ?>">
+                                        <?php
+                                        for ($copia = 0; $copia < 4; $copia++) {
+                                        ?>
+                                            <div class="tecnologias-grupo" <?= $copia > 0 ? 'aria-hidden="true"' : '' ?>>
+                                                <?php foreach ($fila as $value) { ?>
+                                                    <div class="tecnologia-item bg-success bg-gradient rounded-3 px-3 py-1 d-flex align-items-center">
+                                                        <svg class="bi pe-none me-2" width="35" height="35">
+                                                            <use xlink:href="#<?= $value[0]; ?>"></use>
+                                                        </svg>
 
-                                    <div class="bg-success bg-gradient rounded-3 px-3">
-
-                                        <div class="d-flex align-items-center">
-
-                                            <svg class="bi pe-none me-2" width="35" height="35">
-                                                <use xlink:href="#<?= $value[0]; ?>"></use>
-                                            </svg>
-
-                                            <p class="fs-5 m-0 text-start text-truncate w-100"><?= $value[1]; ?></p>
-                                        </div>
+                                                        <p class="fs-5 m-0 text-nowrap"><?= $value[1]; ?></p>
+                                                    </div>
+                                                <?php } ?>
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
-
                             <?php } ?>
-
-
                         </div>
 
                     </div>
@@ -414,7 +863,7 @@
                     <!-- Experiencia  -->
                     <div class="border-top my-4">
 
-                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start" data-en="Experience">
                             Experiencia
                         </p>
 
@@ -424,31 +873,43 @@
                             $trabajos = array(
                                 array(
                                     'icono' => 'briefcase',
-                                    'empresa' => '735 - Freelancer',
+                                    'empresa' => 'Dev 735 - Freelancer',
                                     'cargo' => 'Programador Front-End',
+                                    'cargo_en' => 'Front-End Developer',
                                     'descripcion' => 'Implementación de APIs a sistemas React y QA parcial.',
-                                    'tiempo' => 'Febrero 2026 - Actualmente'
+                                    'descripcion_en' => 'Implementation of APIs into React systems and partial QA.',
+                                    'tiempo' => 'Febrero 2026 - Octubre 2026',
+                                    'tiempo_en' => 'February 2026 - October 2026'
                                 ),
                                 array(
                                     'icono' => 'screen',
                                     'empresa' => 'IADUK - Freelancer',
                                     'cargo' => 'Programador Full-Stack',
+                                    'cargo_en' => 'Full-Stack Developer',
                                     'descripcion' => 'Creación de diseños, implementación de los diseños y su adaptabilidad en pequeños dispositivos en herramientas como NextJS, Flask, creación de bases de datos Microsoft SQL Server, creación de webhooks para realizar pagos y subscripciones con Stripe, creación de lógica usando NextJS junto a su conexión e implementación en el front-end, SEO (indexaciones, sitemap, robots.txt), conexiones con Azure (Blob Container y Azure SQL Database).',
-                                    'tiempo' => 'Febrero 2025 - Mayo 2026'
+                                    'descripcion_en' => 'Design creation, implementation of the designs and their responsiveness on small devices using tools such as NextJS and Flask, creation of Microsoft SQL Server databases, creation of webhooks for payments and subscriptions with Stripe, creation of logic using NextJS along with its connection and implementation in the front-end, SEO (indexing, sitemap, robots.txt), connections with Azure (Blob Container and Azure SQL Database).',
+                                    'tiempo' => 'Febrero 2025 - Mayo 2026',
+                                    'tiempo_en' => 'February 2025 - May 2026'
                                 ),
                                 array(
                                     'icono' => 'laptop-medical',
                                     'empresa' => 'Consultorio médico Dra. Osuna',
                                     'cargo' => 'Programador Full-Stack',
+                                    'cargo_en' => 'Full-Stack Developer',
                                     'descripcion' => 'Creación de un sistema web para gestionar el historial médico de los pacientes y los procesos generales del consultario',
-                                    'tiempo' => 'Noviembre 2024 - Diciembre 2024'
+                                    'descripcion_en' => 'Creation of a web system to manage patients\' medical records and the general processes of the clinic.',
+                                    'tiempo' => 'Noviembre 2024 - Diciembre 2024',
+                                    'tiempo_en' => 'November 2024 - December 2024'
                                 ),
                                 array(
                                     'icono' => 'cil-laptop',
                                     'empresa' => 'FerreZambrano',
                                     'cargo' => 'Programador Full-Stack',
+                                    'cargo_en' => 'Full-Stack Developer',
                                     'descripcion' => 'Creación de un sistema web para la gestión de recursos administrativos de un negocio',
-                                    'tiempo' => 'Agosto 2024 - Septiembre 2024'
+                                    'descripcion_en' => 'Creation of a web system for managing the administrative resources of a business.',
+                                    'tiempo' => 'Agosto 2024 - Septiembre 2024',
+                                    'tiempo_en' => 'August 2024 - September 2024'
                                 )
 
                             );
@@ -471,23 +932,27 @@
                                             <?= $value['empresa'] ?>
                                         </p>
 
-                                        <p class="fs-5 my-2 text-center text-md-start">
+                                        <p class="fs-5 my-2 text-center text-md-start"
+                                            data-en="<?= texto_atributo($value['cargo_en']) ?>">
                                             <?= $value['cargo'] ?>
                                         </p>
 
                                         <div class="d-block d-md-none text-center mb-2">
-                                            <span class="badge bg-success bg-gradient rounded-pill truncate">
+                                            <span class="badge bg-success bg-gradient rounded-pill truncate"
+                                                data-en="<?= texto_atributo($value['tiempo_en']) ?>">
 
                                                 <?= $value['tiempo'] ?>
                                             </span>
                                         </div>
 
-                                        <p class="display-scroll overflow-y-auto">
+                                        <p class="display-scroll overflow-y-auto"
+                                            data-en="<?= texto_atributo($value['descripcion_en']) ?>">
                                             <?= $value['descripcion'] ?>
                                         </p>
                                     </div>
                                     <div class="d-none d-md-block col text-end">
-                                        <span class="badge bg-success bg-gradient rounded-pill truncate">
+                                        <span class="badge bg-success bg-gradient rounded-pill truncate"
+                                            data-en="<?= texto_atributo($value['tiempo_en']) ?>">
 
                                             <?= $value['tiempo'] ?>
                                         </span>
@@ -501,14 +966,14 @@
 
 
                     <!-- Proyectos  -->
-                    <div class="border-top my-4">
+                    <div class="border-top my-4 proyectos-seccion">
 
-                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start" data-en="Projects">
                             Proyectos
                         </p>
 
 
-                        <div class="row">
+                        <div class="proyectos-lista">
                             <?php
 
                             $proyectos = array(
@@ -516,8 +981,11 @@
                                 array(
                                     'icono' => 'shop',
                                     'titulo' => 'Sistema para una ferretería',
+                                    'titulo_en' => 'Hardware store system',
                                     'propiedad' => 'Autoría propia',
+                                    'propiedad_en' => 'Own work',
                                     'descripcion' => 'Proyecto gestionar un negocio, con prestamos, carrito de compras, diferentes monedas de pago, facturas y seguimiento de ventas.',
+                                    'descripcion_en' => 'Project to manage a business, with loans, shopping cart, different payment currencies, invoices and sales tracking.',
                                     'tecnologias' => array(
                                         array('icono' => 'cib-postgresql', 'nombre' => 'PostgreSQL'),
                                         array('icono' => 'fa-tailwind', 'nombre' => 'Tailwind'),
@@ -538,8 +1006,11 @@
                                 array(
                                     'icono' => 'shop',
                                     'titulo' => 'Plataforma de mangas/manhwas/comics',
+                                    'titulo_en' => 'Manga/manhwa/comic platform',
                                     'propiedad' => 'Autoría propia',
+                                    'propiedad_en' => 'Own work',
                                     'descripcion' => 'Proyecto con CRUD sobre autores, editoriales, generos, títulos y capítulos, controlador de vistas, buscador, paginación y demás.',
+                                    'descripcion_en' => 'Project with CRUD for authors, publishers, genres, titles and chapters, view controller, search, pagination and more.',
                                     'tecnologias' => array(
                                         array('icono' => 'fa-laravel', 'nombre' => 'Laravel'),
                                         array('icono' => 'cib-postgresql', 'nombre' => 'PostgreSQL'),
@@ -548,11 +1019,11 @@
 
                                     ),
                                     'imagenes_carusel' => array(
-                                        './imagenes/pagina-mangas/1.png',
-                                        './imagenes/pagina-mangas/4.png',
-                                        './imagenes/pagina-mangas/5.png',
-                                        './imagenes/pagina-mangas/6.png',
-                                        './imagenes/pagina-mangas/1.png',
+                                        './imagenes/pagina-mangas1/1.png',
+                                        './imagenes/pagina-mangas1/4.png',
+                                        './imagenes/pagina-mangas1/5.png',
+                                        './imagenes/pagina-mangas1/6.png',
+                                        './imagenes/pagina-mangas1/1.png',
                                     ),
                                     'enlace_codigo' => false,
                                     'tiempo' => 'Octubre 2024 - Octubre 2024',
@@ -560,8 +1031,11 @@
                                 array(
                                     'icono' => 'shop',
                                     'titulo' => 'Mini-proyecto de registro de blog de notas',
+                                    'titulo_en' => 'Mini-project: notes blog registration',
                                     'propiedad' => 'Autoría propia',
+                                    'propiedad_en' => 'Own work',
                                     'descripcion' => 'Proyecto con CRUD y sistema de usuario para aprendizaje de nuevas herramientas.',
+                                    'descripcion_en' => 'Project with CRUD and a user system for learning new tools.',
                                     'tecnologias' => array(
                                         array('icono' => 'fa-laravel', 'nombre' => 'Laravel'),
                                         array('icono' => 'cib-postgresql', 'nombre' => 'PostgreSQL'),
@@ -583,8 +1057,11 @@
                                 array(
                                     'icono' => 'cib-android',
                                     'titulo' => 'Aplicación móvil',
+                                    'titulo_en' => 'Mobile application',
                                     'propiedad' => 'Software propiedad de UPTAIET',
+                                    'propiedad_en' => 'Software owned by UPTAIET',
                                     'descripcion' => 'Aplicación para la gestión de productos y ventas como requerimiento de la universidad',
+                                    'descripcion_en' => 'Application for product and sales management as a university requirement.',
                                     'tecnologias' => array(
                                         array('icono' => 'cib-python', 'nombre' => 'Python'),
                                         array('icono' => 'cib-mongodb', 'nombre' => 'MongoDB'),
@@ -612,8 +1089,11 @@
                                 array(
                                     'icono' => 'cil-medical-cross',
                                     'titulo' => 'Página de citas médicas pediatricas',
+                                    'titulo_en' => 'Pediatric medical appointment page',
                                     'propiedad' => 'Software propiedad de UPTAIET',
+                                    'propiedad_en' => 'Software owned by UPTAIET',
                                     'descripcion' => 'Sistema para la gestión de citas de pacientes e historial de los mismos ',
+                                    'descripcion_en' => 'System for managing patient appointments and their medical history.',
                                     'tecnologias' => array(
                                         array('icono' => 'cib-python', 'nombre' => 'Python'),
                                         array('icono' => 'cib-postgresql', 'nombre' => 'PostgreSQL'),
@@ -640,8 +1120,11 @@
                                 array(
                                     'icono' => 'shop',
                                     'titulo' => 'Sistema para la gestión de un supermercado',
+                                    'titulo_en' => 'Supermarket management system',
                                     'propiedad' => 'Software propiedad de UPTAIET',
+                                    'propiedad_en' => 'Software owned by UPTAIET',
                                     'descripcion' => 'Herramienta para la organización de productos, ventas, clientes y empleados de una empresa.',
+                                    'descripcion_en' => 'Tool for organizing the products, sales, customers and employees of a company.',
                                     'tecnologias' => array(
                                         array('icono' => 'cib-php', 'nombre' => 'PHP'),
                                         array('icono' => 'cib-mysql', 'nombre' => 'MySQL'),
@@ -668,89 +1151,109 @@
 
 
                             );
-                            foreach ($proyectos as $proyecto_key => $proyecto) {
-                                // Definimos las clases base para el contenedor principal de cada proyecto
-                                // Quitamos 'gap-3' porque rompe el ancho en móviles y usamos gutters de Bootstrap (g-4)
-                                $es_ultimo = ($proyecto_key == count($proyectos) - 1);
-
-                                $class_row_principal = 'row align-items-center m-0 '; // m-0 evita el scroll horizontal
-                                $class_row_principal .= $es_ultimo ? 'pb-2' : 'pb-4 border-bottom border-secondary';
-                                $class_row_principal .= ($proyecto_key !== 0) ? ' pt-4' : '';
-
-                                // El div del carrusel siempre será col-12 en móvil y col-md-5 en escritorio
-                                $class_div_carusel = 'col-12 col-md-4 pt-0 pt-md-2 px-0 px-md-3';
+                            $primera_imagen = true;
+                            $slide_global = 0;
                             ?>
 
-                                <div class="<?= $class_row_principal ?> g-4 p-0">
-                                    <div class="col-md-auto d-none d-md-block text-center">
-                                        <svg class="bi pe-none bg-success bg-gradient rounded-circle p-3"
-                                            style="width:75px; height:75px">
-                                            <use xlink:href="#<?= $proyecto['icono'] ?>"></use>
-                                        </svg>
-                                    </div>
+                            <div class="proyecto-card">
+                                <div id="galeriaProyectos" class="carousel slide carousel-fade">
+                                    <div class="carousel-inner">
+                                        <?php foreach ($proyectos as $proyecto) { ?>
+                                            <?php
+                                            $inicio_proyecto = $slide_global;
+                                            $total_imagenes_proyecto = count($proyecto['imagenes_carusel']);
+                                            ?>
+                                            <?php foreach ($proyecto['imagenes_carusel'] as $img_key => $imagen) { ?>
+                                                <div class="carousel-item <?= $primera_imagen ? 'active' : '' ?>"
+                                                    data-proyecto-inicio="<?= $inicio_proyecto ?>">
+                                                    <img src="<?= $imagen ?>" class="d-block w-100"
+                                                        alt="<?= texto_atributo($proyecto['titulo']) ?>" loading="lazy">
 
-                                    <div class="col-12 col-md-6">
-                                        <p class="fs-4 mb-0 fw-bold text-center text-md-start">
-                                            <?= $proyecto['titulo'] ?>
-                                        </p>
+                                                    <div class="proyecto-capa">
+                                                        <div class="proyecto-cabecera">
+                                                            <div class="proyecto-titulo-bloque">
+                                                                <svg class="bi pe-none bg-success bg-gradient rounded-circle p-2"
+                                                                    style="width:42px; height:42px">
+                                                                    <use xlink:href="#<?= $proyecto['icono'] ?>"></use>
+                                                                </svg>
 
-                                        <p class="fs-5 my-2 text-center text-md-start text-secondary">
-                                            <?= $proyecto['propiedad'] ?>
-                                        </p>
+                                                                <div>
+                                                                    <h3 class="proyecto-titulo"
+                                                                        data-en="<?= texto_atributo($proyecto['titulo_en']) ?>">
+                                                                        <?= $proyecto['titulo'] ?>
+                                                                    </h3>
 
-                                        <p class="mb-3 text-center text-md-start">
-                                            <?= $proyecto['descripcion'] ?>
-                                        </p>
+                                                                    <p class="proyecto-propiedad"
+                                                                        data-en="<?= texto_atributo($proyecto['propiedad_en']) ?>">
+                                                                        <?= $proyecto['propiedad'] ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mb-3">
-                                            <?php foreach ($proyecto['tecnologias'] as $tecnologia) { ?>
-                                                <span class="badge bg-dark bg-gradient border-white border rounded-3 p-1 px-2 d-flex align-items-center">
-                                                    <svg class="bi pe-none me-1" width="20" height="20">
-                                                        <use xlink:href="#<?= $tecnologia['icono']; ?>"></use>
-                                                    </svg>
-                                                    <small><?= $tecnologia['nombre']; ?></small>
-                                                </span>
+                                                        <div class="proyecto-pie">
+                                                            <div class="proyecto-nav-imagenes" role="group"
+                                                                aria-label="Imágenes del proyecto">
+                                                                <?php for ($i = 0; $i < $total_imagenes_proyecto; $i++) { ?>
+                                                                    <button type="button"
+                                                                        class="<?= ($i === $img_key) ? 'activo' : '' ?>"
+                                                                        data-bs-target="#galeriaProyectos"
+                                                                        data-bs-slide-to="<?= $inicio_proyecto + $i ?>"
+                                                                        aria-label="Imagen <?= $i + 1 ?> de <?= $total_imagenes_proyecto ?>">
+                                                                        <?= $i + 1 ?>
+                                                                    </button>
+                                                                <?php } ?>
+                                                            </div>
+
+                                                            <div class="proyecto-info">
+                                                                <p class="proyecto-descripcion"
+                                                                    data-en="<?= texto_atributo($proyecto['descripcion_en']) ?>">
+                                                                    <?= $proyecto['descripcion'] ?>
+                                                                </p>
+
+                                                                <div class="proyecto-badges">
+                                                                    <?php foreach ($proyecto['tecnologias'] as $tecnologia) { ?>
+                                                                        <span class="badge bg-dark bg-gradient border-white border rounded-3 p-1 px-2 d-flex align-items-center">
+                                                                            <svg class="bi pe-none me-1" width="20" height="20">
+                                                                                <use xlink:href="#<?= $tecnologia['icono']; ?>"></use>
+                                                                            </svg>
+                                                                            <small><?= $tecnologia['nombre']; ?></small>
+                                                                        </span>
+                                                                    <?php } ?>
+
+                                                                    <?php if ($proyecto['enlace_codigo'] !== false) { ?>
+                                                                        <a href="<?= $proyecto['enlace_codigo'] ?>"
+                                                                            class="btn btn-success btn-sm rounded-pill px-3 py-1"
+                                                                            target="_blank">
+                                                                            <svg class="bi" width="16" height="16" fill="currentColor">
+                                                                                <use xlink:href="#github"></use>
+                                                                            </svg>
+                                                                            <span data-en="Code">Código</span>
+                                                                        </a>
+                                                                    <?php } ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php
+                                                $primera_imagen = false;
+                                                $slide_global++;
+                                                ?>
                                             <?php } ?>
-                                        </div>
-
-                                        <?php if ($proyecto['enlace_codigo'] !== false) { ?>
-                                            <div class="d-flex justify-content-center justify-content-md-start">
-                                                <a href="<?= $proyecto['enlace_codigo'] ?>"
-                                                    class="btn btn-success btn-sm rounded-pill px-4"
-                                                    target="_blank">
-                                                    <svg class="bi" width="20" height="20" fill="currentColor">
-                                                        <use xlink:href="#github"></use>
-                                                    </svg>
-                                                    Código
-                                                </a>
-                                            </div>
                                         <?php } ?>
                                     </div>
 
-                                    <div class="<?= $class_div_carusel ?>">
-                                        <div id="carusel<?= $proyecto_key ?>" class="carousel slide carousel-fade overflow-hidden rounded-5 shadow">
-                                            <div class="carousel-inner">
-                                                <?php foreach ($proyecto['imagenes_carusel'] as $img_key => $imagen) { ?>
-                                                    <div class="carousel-item <?= ($img_key == 0) ? 'active' : '' ?>">
-                                                        <img src="<?= $imagen ?>" class="d-block w-100"
-                                                            alt="<?= $proyecto['titulo'] ?>"
-                                                            style="aspect-ratio: 16/9; object-fit: cover;"
-                                                            loading="lazy">
-                                                    </div>
-                                                <?php } ?>
-                                            </div>
-
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#carusel<?= $proyecto_key ?>" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#carusel<?= $proyecto_key ?>" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-
+                                    <button class="carousel-control-prev proyecto-flecha proyecto-flecha--anterior"
+                                        type="button" aria-label="Proyecto anterior">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="carousel-control-next proyecto-flecha proyecto-flecha--siguiente"
+                                        type="button" aria-label="Proyecto siguiente">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    </button>
                                 </div>
-                            <?php } ?>
+                            </div>
                         </div>
                     </div>
 
@@ -758,7 +1261,7 @@
                     <!-- Formación  -->
                     <div class="border-top my-4">
 
-                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start" data-en="Education">
                             Formación
                         </p>
 
@@ -769,32 +1272,44 @@
                                     'icono' => 'graduation-cap',
                                     'institucion' => 'UPTAIET',
                                     'titulo' => 'Ingeniero en Informática',
+                                    'titulo_en' => 'Computer Engineering',
                                     'descripcion' => 'Temas: Redes, Bases de datos no relacionales, Auditorias, Aplicaciones móviles y Diseño Web',
+                                    'descripcion_en' => 'Topics: Networks, non-relational databases, audits, mobile applications and web design.',
                                     'estado' => 'Finalizado',
+                                    'estado_en' => 'Completed',
                                     'enlace_institucion' => 'https://uptaivirtualsarec.com/',
                                 ),
                                 array(
                                     'icono' => 'graduation-cap',
                                     'institucion' => 'UPTAIET',
                                     'titulo' => 'Técnico Superior Universitario en Informática',
+                                    'titulo_en' => 'Higher University Technician in Computer Science',
                                     'descripcion' => 'Temas: MVC, Bases de datos relacionales, Aplicaciones móviles y diseño web.',
+                                    'descripcion_en' => 'Topics: MVC, relational databases, mobile applications and web design.',
                                     'estado' => 'Finalizado',
+                                    'estado_en' => 'Completed',
                                     'enlace_institucion' => 'https://uptaivirtualsarec.com/',
                                 ),
                                 array(
                                     'icono' => 'graduation-cap',
                                     'institucion' => 'UPTAIET',
                                     'titulo' => 'Introducción a la robotica',
+                                    'titulo_en' => 'Introduction to Robotics',
                                     'descripcion' => 'Temas: C++, Introducción a la robótica (su historia y conceptos) y construcción de un robot pre-fabricado.',
+                                    'descripcion_en' => 'Topics: C++, introduction to robotics (its history and concepts) and building a pre-built robot.',
                                     'estado' => 'Finalizado',
+                                    'estado_en' => 'Completed',
                                     'enlace_institucion' => './imagenes/robotica_jorge.pdf',
                                 ),
                                 array(
                                     'icono' => 'graduation-cap',
                                     'institucion' => 'FT VE Movistar',
                                     'titulo' => 'Introducción al Diseño de Videojuegos',
+                                    'titulo_en' => 'Introduction to Video Game Design',
                                     'descripcion' => 'Temas: Diseño de niveles, Monetización, Niveles de estimulo al jugador, Publicidad, Público objetivo y engagement.',
+                                    'descripcion_en' => 'Topics: Level design, monetization, player stimulation levels, advertising, target audience and engagement.',
                                     'estado' => 'Finalizado',
+                                    'estado_en' => 'Completed',
                                     'enlace_institucion' => './imagenes/certificado_movistar_jorge.pdf',
                                 )
                             );
@@ -815,17 +1330,20 @@
                                         <p class="fs-4 mb-0 fw-bold text-center text-md-start">
                                             <?= $formacion['institucion'] ?>
                                         </p>
-                                        <p class="fs-5 my-1 text-center text-md-start text-secondary">
+                                        <p class="fs-5 my-1 text-center text-md-start text-secondary"
+                                            data-en="<?= texto_atributo($formacion['titulo_en']) ?>">
                                             <?= $formacion['titulo'] ?>
                                         </p>
-                                        <p class="mb-0 text-center text-md-start small">
+                                        <p class="mb-0 text-center text-md-start small"
+                                            data-en="<?= texto_atributo($formacion['descripcion_en']) ?>">
                                             <?= $formacion['descripcion'] ?>
                                         </p>
                                     </div>
 
                                     <div class="col-12 col-md-auto d-flex d-md-block justify-content-center align-items-center gap-3 text-md-end mt-3 mt-md-0">
 
-                                        <span class="badge bg-dark bg-gradient rounded-pill px-3 py-2 fw-bold">
+                                        <span class="badge bg-dark bg-gradient rounded-pill px-3 py-2 fw-bold"
+                                            data-en="<?= texto_atributo($formacion['estado_en']) ?>">
                                             <?= $formacion['estado'] ?>
                                         </span>
 
@@ -850,7 +1368,7 @@
                     <!-- Sin terminar -->
                     <div class="border-top my-4">
 
-                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start">
+                        <p class="fs-2 fw-bold pt-2 text-uppercase text-center text-md-start" data-en="In progress">
                             En proceso
                         </p>
                         <div class="row">
@@ -859,8 +1377,11 @@
                                 array(
                                     'imagen' => './imagenes/pagina-biblioteca/1.png',
                                     'titulo' => 'Biblioteca',
+                                    'titulo_en' => 'Library',
                                     'descripcion' => 'Sistema para la gestión de una biblioteca o libreria, con su sistema de prestamos.',
-                                    'estado' => 'En proceso'
+                                    'descripcion_en' => 'System for managing a library or bookstore, with its loan system.',
+                                    'estado' => 'En proceso',
+                                    'estado_en' => 'In progress'
                                 ),
                                 // array(
                                 //     'imagen' => './imagenes/pagina-ferreteria-next1/1.png',
@@ -875,14 +1396,17 @@
                                         <img src="<?= $proceso['imagen'] ?>" class="card-img-top"
                                             alt="<?= $proceso['titulo'] ?>" loading="lazy">
                                         <div class="card-body d-flex flex-column">
-                                            <h5 class="card-title"><?= $proceso['titulo'] ?></h5>
-                                            <p class="card-text"><?= $proceso['descripcion'] ?></p>
+                                            <h5 class="card-title" data-en="<?= texto_atributo($proceso['titulo_en']) ?>">
+                                                <?= $proceso['titulo'] ?>
+                                            </h5>
+                                            <p class="card-text" data-en="<?= texto_atributo($proceso['descripcion_en']) ?>">
+                                                <?= $proceso['descripcion'] ?>
+                                            </p>
 
                                             <span class="badge bg-success bg-gradient rounded-pill w-100 mt-auto">
 
                                                 <p class="p-0 m-0 fs-6">
-
-                                                    <?= $proceso['estado'] ?>
+                                                    <span data-en="<?= texto_atributo($proceso['estado_en']) ?>"><?= $proceso['estado'] ?></span>
                                                 </p>
                                             </span>
                                         </div>
@@ -897,7 +1421,7 @@
 
                         <div class="row flex-wrap justify-content-between align-items-center d-flex">
                             <div class="col-6 d-flex align-self-center">
-                                <small>
+                                <small data-en="Thanks to mouredev for providing the template.">
                                     Agradecimientos a mouredev por proporcionar la plantilla.
                                 </small>
                             </div>
@@ -905,7 +1429,7 @@
 
 
 
-                                <a class="btn p-0" href="./jorge-heredia-curriculum-spanish.docx">
+                                <a class="btn p-0" href="./curriculum.pdf">
 
                                     <svg class="bi pe-none" width="20" height="20">
                                         <use xlink:href="#curriculum"></use>
@@ -945,6 +1469,176 @@
 
 
     <script src="./framework/bootstrap/bootstrap.js"></script>
+
+    <script>
+        (function() {
+            const CLAVE_IDIOMA = 'curriculum-idioma';
+            const textosOriginales = new WeakMap();
+
+            function obtenerIdiomaGuardado() {
+                try {
+                    return localStorage.getItem(CLAVE_IDIOMA) === 'en' ? 'en' : 'es';
+                } catch (error) {
+                    return 'es';
+                }
+            }
+
+            function guardarIdioma(idioma) {
+                try {
+                    localStorage.setItem(CLAVE_IDIOMA, idioma);
+                } catch (error) {}
+            }
+
+            function aplicarIdioma(idioma) {
+                const esIngles = idioma === 'en';
+
+                document.querySelectorAll('[data-en]').forEach(function(elemento) {
+                    if (!textosOriginales.has(elemento)) {
+                        textosOriginales.set(elemento, elemento.textContent);
+                    }
+
+                    elemento.textContent = esIngles ?
+                        elemento.dataset.en :
+                        textosOriginales.get(elemento);
+                });
+
+                document.documentElement.lang = esIngles ? 'en' : 'es';
+
+                const etiqueta = document.getElementById('idiomaActual');
+                if (etiqueta) {
+                    etiqueta.textContent = esIngles ? 'Inglés' : 'Español';
+                }
+
+                document.querySelectorAll('[data-lang]').forEach(function(boton) {
+                    boton.classList.toggle('active', boton.dataset.lang === idioma);
+                });
+            }
+
+            const contenedorIdioma = document.getElementById('selectorIdiomaContenedor');
+            const botonIdioma = document.getElementById('selectorIdiomaBoton');
+
+            function abrirMenuIdioma(abrir) {
+                if (!contenedorIdioma || !botonIdioma) {
+                    return;
+                }
+
+                contenedorIdioma.classList.toggle('abierto', abrir);
+                botonIdioma.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+            }
+
+            if (botonIdioma) {
+                botonIdioma.addEventListener('click', function(evento) {
+                    evento.stopPropagation();
+                    abrirMenuIdioma(!contenedorIdioma.classList.contains('abierto'));
+                });
+            }
+
+            document.addEventListener('click', function(evento) {
+                if (contenedorIdioma && !contenedorIdioma.contains(evento.target)) {
+                    abrirMenuIdioma(false);
+                }
+            });
+
+            document.addEventListener('keydown', function(evento) {
+                if (evento.key === 'Escape') {
+                    abrirMenuIdioma(false);
+                }
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(function(boton) {
+                boton.addEventListener('click', function() {
+                    aplicarIdioma(boton.dataset.lang);
+                    guardarIdioma(boton.dataset.lang);
+                    abrirMenuIdioma(false);
+                });
+            });
+
+            function cerrarDescripcionesProyecto() {
+                document.querySelectorAll('.proyecto-info.mostrar-descripcion').forEach(function(info) {
+                    info.classList.remove('mostrar-descripcion');
+                });
+            }
+
+            document.querySelectorAll('.proyecto-info').forEach(function(info) {
+                info.addEventListener('click', function(evento) {
+                    if (!window.matchMedia('(max-width: 767px)').matches) {
+                        return;
+                    }
+
+                    if (evento.target.closest('a')) {
+                        return;
+                    }
+
+                    evento.stopPropagation();
+                    const estabaAbierto = info.classList.contains('mostrar-descripcion');
+                    cerrarDescripcionesProyecto();
+
+                    if (!estabaAbierto) {
+                        info.classList.add('mostrar-descripcion');
+                    }
+                });
+            });
+
+            document.addEventListener('click', function() {
+                cerrarDescripcionesProyecto();
+            });
+
+            const galeriaProyectos = document.getElementById('galeriaProyectos');
+
+            if (galeriaProyectos) {
+                const carruselProyectos = bootstrap.Carousel.getOrCreateInstance(galeriaProyectos);
+                const diapositivasProyectos = Array.from(galeriaProyectos.querySelectorAll('.carousel-item'));
+                const iniciosProyectos = [];
+
+                diapositivasProyectos.forEach(function(diapositiva) {
+                    const inicio = Number(diapositiva.dataset.proyectoInicio);
+
+                    if (iniciosProyectos.indexOf(inicio) === -1) {
+                        iniciosProyectos.push(inicio);
+                    }
+                });
+
+                function moverProyecto(direccion) {
+                    const diapositivaActiva = diapositivasProyectos.find(function(diapositiva) {
+                        return diapositiva.classList.contains('active');
+                    });
+
+                    if (!diapositivaActiva) {
+                        return;
+                    }
+
+                    const inicioActual = Number(diapositivaActiva.dataset.proyectoInicio);
+                    const posicionActual = iniciosProyectos.indexOf(inicioActual);
+                    let nuevaPosicion = posicionActual + direccion;
+
+                    if (nuevaPosicion < 0) {
+                        nuevaPosicion = iniciosProyectos.length - 1;
+                    } else if (nuevaPosicion >= iniciosProyectos.length) {
+                        nuevaPosicion = 0;
+                    }
+
+                    carruselProyectos.to(iniciosProyectos[nuevaPosicion]);
+                }
+
+                const flechaProyectoAnterior = galeriaProyectos.querySelector('.proyecto-flecha--anterior');
+                const flechaProyectoSiguiente = galeriaProyectos.querySelector('.proyecto-flecha--siguiente');
+
+                if (flechaProyectoAnterior) {
+                    flechaProyectoAnterior.addEventListener('click', function() {
+                        moverProyecto(-1);
+                    });
+                }
+
+                if (flechaProyectoSiguiente) {
+                    flechaProyectoSiguiente.addEventListener('click', function() {
+                        moverProyecto(1);
+                    });
+                }
+            }
+
+            aplicarIdioma(obtenerIdiomaGuardado());
+        })();
+    </script>
 </body>
 
 </html>
